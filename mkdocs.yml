@@ -1,0 +1,52 @@
+site_name: 运维云栈
+site_description: '运维云栈'
+site_author: erics
+site_dir: site
+site_url: https://ywyz.pythoneers.cn
+dev_addr: '127.0.0.1:8001'
+google_analytics: [ 'UA-36723568-3', 'mkdocs.org' ]
+plugins: [ ]
+extra_css:
+  - css/nav.css
+  - css/public.css
+extra_javascript:
+  - js/gotop.js
+use_directory_urls: false
+nav:
+  #  - 首页: index.md
+  - Linux:
+      - Linux基础: linux/linux-basis.md
+      - Linux进阶: linux/linux-advance.md
+  - Shell:
+      - Shell基础: shell/shell-basis.md
+  - CentOS:
+      - CentOS软件安装: centos/software-install.md
+  - Ubuntu:
+      - Ubuntu软件安装: ubuntu/software-install.md
+  - Zabbix:
+      - Zabbix安装: zabbix/install.md
+      - Zabbix添加监控主机: zabbix/monitor-host.md
+      - Zabbix添加触发器: zabbix/trigger.md
+      - Zabbix自定义报警: zabbix/custom-alarm.md
+      - Zabbix使用grafana自定义图形: zabbix/custom-graphics.md
+      - Zabbix自定义模板: zabbix/custom-template.md
+      - Zabbix使用percona监控MySQL: zabbix/monitor-mysql.md
+      - Zabbix自动化监控: zabbix/automatic-monitor.md
+      - Zabbix Agent主动模式: zabbix/agent-active-mode.md
+      - Zabbix版本升级: zabbix/version-upgrade.md
+      - Zabbix性能调优: zabbix/performance-tuning.md
+      - Zabbix分布式监控: zabbix/distributed-monitor.md
+      - Zabbix遇到的问题: zabbix/question.md
+  - Kubernetes:
+      - K8S架构/组件说明: kubernetes/kubernetes-component.md
+      - K8S集群安装部署: kubernetes/kubernetes-install.md
+      - K8S网络通信: kubernetes/kubernetes-network.md
+      - K8S资源清单: kubernetes/kubernetes-resource.md
+      - K8S中遇到的问题: kubernetes/kubernetes-question.md
+  - Nginx:
+      - Nginx知识点: nginx/nginx-knowledge.md
+#  - Apache:
+#      - Apache: apache/apache-knowledge.md
+theme:
+  name: mkdocs
+  custom_dir: custom_theme

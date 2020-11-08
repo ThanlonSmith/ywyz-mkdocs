@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/zabbix/question.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li class="active">
+    <a href="question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="distributed-monitor.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../kubernetes/kubernetes-component.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#zabbix">Zabbix遇到的问题</a></li>
+            <li><a href="#1-please-create-database-manually-and-set-the-configuration-parameters-for-connection-to-this-database-press-next-step-button-when-done">1. Please create database manually, and set the configuration parameters for connection to this database. Press "Next step" button when done.</a></li>
+            <li><a href="#2-get-value-from-agent-failed-cannot-connect-to-1000310050-113-no-route-to-host">2. Get value from agent failed: cannot connect to [[10.0.0.3]:10050]: [113] No route to host</a></li>
+            <li><a href="#3-cannot-start-alert-manager-service-cannot-bind-socket-to-tmpzabbix_server_alertersock-13-permission-denied">3. cannot start alert manager service: Cannot bind socket to "/tmp/zabbix_server_alerter.sock": [13] Permission denied.</a></li>
+            <li><a href="#4-cannot-start-preprocessing-service-cannot-bind-socket-to-tmpzabbix_server_preprocessingsock-13-permission-denied">4. cannot start preprocessing service: Cannot bind socket to "/tmp/zabbix_server_preprocessing.sock": [13] Permission denied</a></li>
+            <li><a href="#5active-check-configuration-update-from-xxxx10051-started-to-fail-zbx_tcp_read-timed-out">5.active check configuration update from [x.x.x.x:10051] started to fail (ZBX_TCP_READ() timed out)</a></li>
+            <li><a href="#6-failed-to-accept-an-incoming-connection-connection-from-xxxx-rejected-allowed-hosts-xxxx">6. failed to accept an incoming connection: connection from "x.x.x.x" rejected, allowed hosts: "x.x.x.x"</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="Zabbix" src="../imgs/zabbix/202011061125.png" /></p>
+<h4 id="zabbix">Zabbix遇到的问题</h4>
+<hr>
+
+<h5 id="1-please-create-database-manually-and-set-the-configuration-parameters-for-connection-to-this-database-press-next-step-button-when-done">1. Please create database manually, and set the configuration parameters for connection to this database. Press "Next step" button when done.</h5>
+<p>问题来源：连接 mariadb 的时候总是连接不上
+解决方法：创建 zabbix 数据库的时候应该这样创建：<font>create database zabbix character set utf8 collate utf8_bin;</font>
+<hr></p>
+<h5 id="2-get-value-from-agent-failed-cannot-connect-to-1000310050-113-no-route-to-host">2. Get value from agent failed: cannot connect to [[10.0.0.3]:10050]: [113] No route to host</h5>
+<p>问题来源：zabbix server 连接监控主机时提示以上
+解决方法：关闭监控主机的防火墙，<font>systemctl stop firewalld</font>，永久关闭使用 <font>systemctl disable firewalld</font>。
+<hr></p>
+<h5 id="3-cannot-start-alert-manager-service-cannot-bind-socket-to-tmpzabbix_server_alertersock-13-permission-denied">3. cannot start alert manager service: Cannot bind socket to "/tmp/zabbix_server_alerter.sock": [13] Permission denied.</h5>
+<p>问题来源：Zabbix 从低版本升级到高版本后重启 Zabbix Server 失败，日志报这个错误
+解决方法：关闭 SELINUX 防火墙就可了，将SELINUX的值设置为 disable，具体操作如下：</p>
+<pre><code class="python">[root@localhost ~]$ vim /etc/selinux/config
+[root@localhost ~]$ grep -Ev '^$|#' /etc/selinux/config 
+SELINUX=disable
+SELINUXTYPE=targeted
+</code></pre>
+
+<blockquote>
+<p><font>配置完成后要重启系统!!!</font></p>
+</blockquote>
+<hr>
+
+<h5 id="4-cannot-start-preprocessing-service-cannot-bind-socket-to-tmpzabbix_server_preprocessingsock-13-permission-denied">4. cannot start preprocessing service: Cannot bind socket to "/tmp/zabbix_server_preprocessing.sock": [13] Permission denied</h5>
+<p>问题来源：同上
+解决方法：同上
+<hr></p>
+<h5 id="5active-check-configuration-update-from-xxxx10051-started-to-fail-zbx_tcp_read-timed-out">5.active check configuration update from [x.x.x.x:10051] started to fail (ZBX_TCP_READ() timed out)</h5>
+<p>问题来源：Zabbix Proxy下的客户端（Zabbix Agent）日志报错
+解决方法：实际上这是不影响监控系统的使用，只需要在配置文件 <font>/etc/zabbix/zabbix_agentd.conf</font> 中把 <font>ServerActive=xxxx</font> 给注释了，不用配置。
+<hr></p>
+<h5 id="6-failed-to-accept-an-incoming-connection-connection-from-xxxx-rejected-allowed-hosts-xxxx">6. failed to accept an incoming connection: connection from "x.x.x.x" rejected, allowed hosts: "x.x.x.x"</h5>
+<p>问题来源：使用 Zabbix Proxy 作代理监控 Zabbix Agent 时，客户端（Zabbix Agent）报错
+解决方法：在Web页面上添加代理下的监控主机时，这些监控主机中Zabbix Agent的配置文件中 <font>Hostname的值一定要于这里的“主机名称”的值完全相同</font>。</p>
+<pre><code class="python">[root@proxy-agent ~]$ grep -Ev &quot;^$|#&quot; /etc/zabbix/zabbix_agentd.conf 
+...
+Hostname=Zabbix agent
+...
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200604030805563.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

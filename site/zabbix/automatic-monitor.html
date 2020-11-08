@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/zabbix/automatic-monitor.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li class="active">
+    <a href="automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="monitor-mysql.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="agent-active-mode.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#zabbix">Zabbix自动监控</a></li>
+            <li><a href="#1">1. 自动化监控概述</a></li>
+            <li><a href="#2">2. 配置自动注册的动作</a></li>
+            <li><a href="#3-zabbix-agent">3. 配置Zabbix Agent的配置文件</a></li>
+            <li><a href="#4">4. 动作日志</a></li>
+            <li><a href="#5">5. 报警时间设置</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="Zabbix" src="../imgs/zabbix/202011061125.png" /></p>
+<h4 id="zabbix">Zabbix自动监控</h4>
+<hr>
+
+<h5 id="1">1. 自动化监控概述</h5>
+<p>自动化监控有两种方式，一种是自动发现，也就是根据 ip 一个个去扫描，但是 <font>效率是比较低的</font>。另外一种自动化监控的方式是 Zabbix 自带的 <font>自动注册</font>。下面将通过自动注册来完成自动化监控。
+<hr></p>
+<h5 id="2">2. 配置自动注册的动作</h5>
+<p>设置 <font>动作</font> 和一系列动作相关的操作。<font>动作是自动注册的前提，不配置动作就不能完成自动注册，当把动作禁用后，那么就相当于把自动注册给关闭了。</font></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602005156782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020060200541889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602005641655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602010204999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>完成一个自动注册的动作后，可以直接克隆在这个动作基础上作修改进添加新的的动作。这里添加了两个动作，一个是监控web主机的动作，另一个是监控数据库主机的动作：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602010419865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602010601274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602103143178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>动作添加完成后，可以先删除所有主机，等配置好 Zabbix Agent 的配置文件并重启后，监控界面就会显示被监控的主机。
+<hr></p>
+<h5 id="3-zabbix-agent">3. 配置Zabbix Agent的配置文件</h5>
+<p>配置 Zabbix Agent 配置文件的目的是设置元数据，与在 Web 界面上设置的一致，用来唯一标识一台机器。先来配置 Zabbix Server 所在机器上的 Agent，测试动作是否设置成功。</p>
+<pre><code class="js">[root@Zabbix-server ~]$ cd /etc/zabbix/
+[root@Zabbix-server zabbix]$ vim zabbix_agentd.conf
+[root@Zabbix-server zabbix]$ grep -Ev '^$|#' zabbix_agentd.conf
+...
+Server=127.0.0.1             # 所在的主机IP
+ServerActive=127.0.0.1       # 与Server一样
+Hostname=Zabbix server       # 主机名（会在web界面显示）
+HostMetadata=db          # 元数据
+...
+[root@Zabbix-server zabbix]$ systemctl restart zabbix-agent
+</code></pre>
+
+<p>重启之后，可以发现新增加了一台监控的主机（事先已经删除了所有监控主机）：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602094539745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>10.0.0.3的机器上也做同样的设置，只是需要修改Server必须是Zabbix Server所在的机器，也就是10.0.0.2，还有ServerActive=10.0.0.2。主机的名字可以自定义，元数据这里可以使用db。</p>
+<pre><code class="python">[root@agent zabbix]$ grep -Ev '^$|#' zabbix_agentd.conf 
+...
+Server=10.0.0.2
+ServerActive=10.0.0.2
+Hostname=10.0.0.3
+HostMetadata=web
+...
+[root@agent zabbix]$ systemctl restart zabbix-agent
+</code></pre>
+
+<p>设置之后也会把这台主机监控起来：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602102354704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="4">4. 动作日志</h5>
+<p>动作执行后，由于设置了发送邮件，会向管理员发送邮件，在动作日志中可以查看动作的执行日志：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602114233568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="5">5. 报警时间设置</h5>
+<p>这部分是补充内容，当要求某些项目在指定时间不报警，可以右两种方法。第一种方法是全局设置，不推荐：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602104200768.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>第二种是针对监控项设置报警时间：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602104516754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>不可以在触发器里配置。</p></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

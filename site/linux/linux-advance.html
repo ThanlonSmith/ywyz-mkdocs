@@ -1,0 +1,881 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/linux/linux-advance.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li class="active">
+    <a href="linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../zabbix/install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="linux-basis.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../shell/shell-basis.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#linux">Linux进阶</a></li>
+            <li><a href="#1-vim">1. vim</a></li>
+            <li><a href="#2">2. 网络相关的命令</a></li>
+            <li><a href="#3">3. 查看系统信息的命令</a></li>
+            <li><a href="#4">4. 用户管理</a></li>
+            <li><a href="#5">5. 文件与目录权限</a></li>
+            <li><a href="#6-ps1">6. PS1变量</a></li>
+            <li><a href="#7-tar">7. tar解压命令</a></li>
+            <li><a href="#8-gzip">8. gzip解压命令</a></li>
+            <li><a href="#9">9. 查看进程的状态</a></li>
+            <li><a href="#10-kill">10. kill命令</a></li>
+            <li><a href="#11-killall">11. killall命令</a></li>
+            <li><a href="#12-selinux">12. selinux防火墙</a></li>
+            <li><a href="#13-iptables">13. iptables防火墙</a></li>
+            <li><a href="#14-linux">14. Linux中文显示设置</a></li>
+            <li><a href="#15-df">15. df命令</a></li>
+            <li><a href="#16-tree">16. tree命令</a></li>
+            <li><a href="#17-dns">17. DNS相关</a></li>
+            <li><a href="#18-dns">18. 本地强制dns解析</a></li>
+            <li><a href="#19-crond">19. 计划任务crond服务</a></li>
+            <li><a href="#20">20. 软件包管理</a></li>
+            <li><a href="#21">21. 系统服务管理命令</a></li>
+            <li><a href="#22-xz">22. xz命令</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="" src="../imgs/linux/linux-basis/20201105.jpeg" /></p>
+<h4 id="linux">Linux进阶</h4>
+<hr>
+
+<h5 id="1-vim">1. vim</h5>
+<p>vim 是从 vi 发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方，vim 则做到了。vim 可以说是程序开发者的一项很好用的工具。</p>
+<p>基本上 vi/vim 共分为三种模式，分别是命令模式(Command mode)，输入模式(Insert mode)和底线命令模式(Last line mode)。vim 具有程序编辑功能，可以主动以字体颜色辨别语法的正确性，方便程序设计。</p>
+<p>( 1 ) vi/vim的三种工作模式</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190930183152316.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>( 2 ) 命令模式</p>
+<pre><code class="js">w或者e：移动光标到下一个单词
+b：移动光标到上一个单词
+数字0：移动到本行的开头
+$：移动到光标到本行结尾
+H：移动光标到屏幕首行
+M：移动光标到屏幕的中间行
+L：移动光标到屏幕的尾行
+gg：移动光标到文档的首行
+G：移动光标到文档的尾行
+ctrl+f：上一页
+ctrl+b：下一页
+/root：在整篇文章中搜索root字符串，向下查找，按n查找下一个
+?root：在整篇文章中搜索root字符串，向上查找，安n查找下一个
+%：找到括号的另一半
+yy：拷贝光标所在行
+dd：删除光标的所在行
+D：删除当前光标到行尾的内容
+dG：删除当前行到文档尾部的内容
+p：粘贴yy操作所复制的内容
+x：删除光标所在的字符
+u：撤销上一步操作
+3yy：拷贝光标所在的3行
+5dd：删除光标所在的5行
+</code></pre>
+
+<p>( 3 ) 输入模式
+在命令模式下按 i o a 即可进入输入模式。</p>
+<p>( 4 ) 底线命令模式</p>
+<pre><code>:q：退出
+:q!：强制退出
+:w：生效写入的内容
+:wq!：强制写入退出
+:set num或set number：显示行号
+:set nonu或set nonumbeer：取消行号
+:数字：调到数字那行
+:!command：暂时离开vim指令模式，执行command的结果，如:!ip a表示临时看一下ip信息，然后回到vim
+</code></pre>
+
+<p>随时按下ESC可以退出底线命令模式，进入命令模式。
+<hr></p>
+<h5 id="2">2. 网络相关的命令</h5>
+<p>如果你的电脑上没有 <code>ifconfig</code>，只有 <code>ip addr</code>，则需要通过 <code>yum -y install net-tools</code> 来安装。</p>
+<p>查看网卡的 ip 地址：<code>$ ifconfig</code>，直接输入 ifconfig 会列出已经启动的网卡，也可以输入 ifconfig 单独显示 eth0 的信息。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20191001062529451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<pre><code>who1：网卡的代号
+lo：回环地址loopback
+inet：IPv4的ip地址
+netmask：子网掩码
+broadcast：广播地址
+RX/TX：流量发/收情况，RX是发送(transport)，TX(receive)
+packets：数据包数
+errors：数据包错误数
+dropped：数据包有问题被丢弃的数量
+collisions：数据包碰撞情况，数值大表示网络状况差
+</code></pre>
+
+<p>启动/关闭一块网卡：<code>$ ifup eth0</code>表示启动一块网卡，<code>$ ifdown eth0</code> 表示关闭一块网卡。此命令其实是调用网络哦服务配置文件 <code>/etc/init.d/network</code>。<code>$ /etc/init.d/network start</code> 是启动网卡，<code>$ /etc/init.d/network stop</code> 是停止网卡，<code>$ /etc/init.d/network restart</code> 是重启网卡。ifup 和 ifdown 是直接连接到 /etc/sysconfig/network-scripts 目录下搜索对应的网卡文件，例如 ifcfg-eth0 然后加以设置。</p>
+<p>ip 命令：ip 结合了 ifconfig 和 route 两个命令的功能，<code>ip addr show</code> 表示查看ip信息。</p>
+<p>netstat 命令用来打印 Linux 中网络系统的状态信息，可得知 Linux 系统的网络状态。一般使用 <code>netstat -tunlpa</code>，netstat 指令可以查看到系统开启的端口。可以过滤指定端口，如指定3306端口：<code>netstat -tunlpa | grep 3306</code></p>
+<pre><code>t或--tcp：显示TCP传输协议的连接状态
+
+u或--udp：显示UDP传输协议的连接状态
+
+n或--numeric：直接使用ip地址，而不通过域名服务器
+
+l或--listening：显示监控中的服务器Socket
+
+p或--programs：显示正在使用Socket的程序识别码和程序名称
+
+a或--all：显示所有连线中的Socket
+</code></pre>
+
+<p>测试网速的命令：<code>speedtest-cli</code>，centos 中需要安装 speedtest-cli，可以执行 <code>pip install git+https://github.com/sivel/speedtest-cli.git</code>，使用 git 从 git 仓库中下载 speedtest-cli，要保证系统已经安装 git 和 python 的 pip 模块。</p>
+<pre><code class="py">thanlon@thanlon-master:~$ speedtest-cli 
+Retrieving speedtest.net configuration...
+Testing from China Telecom Shanghai (101.92.63.73)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Chinamobile-5G (Shanghai) [19.64 km]: 12.642 ms
+Testing download speed................................................................................
+Download: 4.60 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 2.01 Mbit/s
+</code></pre>
+
+<hr>
+
+<h5 id="3">3. 查看系统信息的命令</h5>
+<p>查看系统版本信息：<code>$ cat /etc/redhat-release</code></p>
+<p>查看内核版本号：<code>$ uname -r</code></p>
+<p>查看系统位数：<code>$ uname -m</code></p>
+<p>查看内核所有信息：<code>$ uname -a</code></p>
+<p>查看主机名：<code>$ hostname</code></p>
+<p>修改主机名：<code>$ hostnamectl set-hostname master</code>，设置主机名为：thanlon-linux</p>
+<p>查看系统处理器个数：<code>cat /proc/cpuinfo</code>，或者使用<code>$ top</code>,然后按1
+<hr></p>
+<h5 id="4">4. 用户管理</h5>
+<p><code>/etc/passwd</code>存放用户组信息，<code>/etc/shadow</code>存放用户密码，<code>/etc/group</code>存放用户组。注意：超级用户 root 切换到普通用户不需要密码；普通用户切换到 root 需要输入密码；普通用户较小，只能查看信息；$ 符号是普通用户的命令提示符，# 是超级用户的命令提示符。</p>
+<p>通过 id 命令查看用户信息：<code>$ id root</code>，<code>$ id thanlon</code></p>
+<p>普通用户的创建：<code>$ useradd kiku</code> 表示创建用户kiku，可以通过 <code>tail -1 /etc/passwd</code> 查看kiku的信息</p>
+<p>普通用户的删除：<code>$ userdel -rf thanlon</code>，删除thanlon这个普通用户。-f 表示强制删除用户，-r 表示删除用户以及用户家目录。</p>
+<p>更改用户密码：<code>$ passwd root</code> 根改root用户密码，<code>$ passwd thanlon</code> 更改 thanlon 用户的密码。thanlon是普通用户，是管理员或具备管理权限的用户创建的，只能读，不能增删改。</p>
+<p>切换用户：<code>$ su - root</code> 切换到root用户，<code>$ su - thanlon</code> 切换到thanlon用户。<font>su 命令中间的 - 号很重要</font>，意味着完全切换到新的用户，即环境变量信息也变更为新用户的信息。</p>
+<p>查看当前用户：<code>$ whoami</code></p>
+<p>退出用户登录：<code>$ logout</code></p>
+<p>创建用户组：<code>$ groupadd it_dep</code> 表示添加用户组 it_dep。groupadd 用于创建用户组，为了高效地指派系统中各个用户的权限，在工作中常常添加几个用户到一个组里面，这样可以针对一类用户安排权限。</p>
+<p>sudo：sudo 命令用来以其它身份来执行命令，预设的身份为 root。在 /etc/sudoers 中设置了可执行 sudo 指令的用户。若其未经过的用户企图使用 sudo，则会发出警告的邮件给管理员。用户使用 sudo 时，必须先输入密码，之后有5分钟的有效期限，超过期限则必须重新输入秘密。<kbd>sudo【选项】【参数】</kbd></p>
+<pre><code>-b：在后台执行指令
+-h：显示帮助
+-H：将HOME环境变量设置为新身份的HEMO环境变量
+-K：结束密码的有效期限，也就是下次执行sudo时便需要输入密码
+-l：列出目前用户可执行与无法执行的指令
+-p：改变询问密码的提示符
+-s&lt;shell&gt;：执行指定的shell
+-u&lt;用户&gt;：以指定的用户作为新的身份，若不加此参数，则预设以root作为新的身份
+-v：延长密码有效期5分钟
+-V：显示版本信息
+</code></pre>
+
+<p>sudo 命令应用在什么时候应用？当用户权限小而想要执行更多权限的时候，可以以 root 身份去运行。这里由于配置sudo必须编辑 /etc/sudoers 文件，并且只有 root 才能修改。我们可以通过 <code>$ visudo</code> 命令直接编辑 sudoers 文件，使用这个命令还可以检查语法，比直接使用vim编辑更加安全。找到 root ALL=(ALL:ALL) ALL，可以在其下面为普通用户thanlon添加 <font>在任何地方执行任何命令</font>。</p>
+<pre><code class="py"># User privilege specification
+root    ALL=(ALL:ALL) ALL
+thalon ALL=(ALL:ALL) ALL # 允许thanlon在任何地方执行任何命令
+</code></pre>
+
+<h5 id="5">5. 文件与目录权限</h5>
+<p>在 Linux 中，每个文件都有所有者和所属组，并且规定了文件的所有者，所属组以及其他人对文件的可读、可写、可执行权限。对于目录的权限来说，可读是读取目录的列表，可写是在目录内新增、修改和删除文件，可执行表示可以进入目录。</p>
+<p>( 1 ) 查看文件的权限</p>
+<pre><code class="shell">$ ls -l tmp.txt 
+-rwxrwxrwx 1 thanlon thanlon 30 9月  19 19:38 tmp.txt
+</code></pre>
+
+<p>( 2 ) 文件类型</p>
+<pre><code class="shell"> - ：一般文件
+ d：文件夹
+ l：软链接(快捷方式)
+ b：块设备，存储媒体文件为主
+ c：代表键盘、鼠标等设备
+</code></pre>
+
+<p>( 3 ) 文件权限</p>
+<pre><code class="python">r：read是可读，可以用cat等命令查看
+w：write是可写，可以编辑或者删除这个文件
+x：executable可执行
+</code></pre>
+
+<p>( 4 ) 目录权限</p>
+<pre><code class="python">r：可以对此目录执行ls列出所有文件
+w：可以在这个目录创建文件
+x：可以cd进入这个目录或者查看详细信息
+</code></pre>
+
+<p>( 5 ) 数字权限
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20191001141950133.png" />
+( 6 ) 查看文件权限相关的命令
+查看 root 用户的权限：<code>$ id root</code></p>
+<p>( 7 ) 修改文件权限
+修改用户数主：<code>$ chown thanlon xxx.txt</code>，修改xxx.txt文件的所属主为thanlon。</p>
+<p>修改用户属组：<code>$ chgrp 组名 file</code></p>
+<p>给属组加上可读可执行权限：<code>$ chmod g+w test.txt</code>$ chmod g+x test.txt`</p>
+<p>给属主加上可读可执行权限：<code>$ chmod u+w test.txt</code>$ chmod u+x test.txt`</p>
+<p>减去其他用户的可读权限：<code>$ chmod o-r test.txt</code></p>
+<p>给文件添加可读可写可执行的权限：<code>$ chmod 777 test.txt</code></p>
+<p>( 8 ) 软链接</p>
+<p>软链接也叫做符号链接，类似于 windows 的快捷方式，常用于安装软件的快捷方式配置 python、nginx 等。</p>
+<p>软链接格式：<code>$ ln -s 目标文件 软链接名</code>，可以通过软链接查看文件 <code>$ cat 软链接名</code>。可以通过 <code>$ rm -rf 软链接地址</code>来删除快捷方式，如果删除了目标文件，那么软链接也就没了意义。
+<hr></p>
+<h5 id="6-ps1">6. PS1变量</h5>
+<p>PS1 用于控制命令提示符，可修改：</p>
+<p>打印 PS1：<code>$ echo $PS1</code>，打印结果是[\u@\h \W]\$</p>
+<pre><code class="py">PS1='[\u@\h \W \t]\$' # 可以添加一个时间
+PS1='[\u@\h \w]\$' # 可以展示绝对路径
+</code></pre>
+
+<p>这个操作后，重启后变量配置会丢失，所以写入到系统的配置文件中，每次登录都加载。将 “PS1='[\u@\h \W \t]\$'” 写入到 /etc/profile 这个用户配置文件最下面一行中。<code>systemctl stop firewalld</code>这条命令可以停止防火墙。
+<hr></p>
+<h5 id="7-tar">7. tar解压命令</h5>
+<p>tar 命令是用来压缩和解压文件，tar 本身不具有压缩功能，它是调用压缩功能实现的。</p>
+<p>常用的参数：</p>
+<pre><code>-c或--create：建立新的备份文件，压缩文件使用这个参数
+-x或--extract或--get：从备份文件中还原文件，解压缩使用这个参数
+-z或--gzip或--ungzip：通过gzip指令处理备份文件
+-f&lt;备份文件&gt;或--file=&lt;备份文件&gt;：指定备份文件
+-v：显示操作过程
+-j：支持bzip2解压文件
+</code></pre>
+
+<p>压缩当前目录所有jpg结尾的文件：<code>tar -zcvf all_pic.tgz *.jpg</code></p>
+<p>压缩文件：<code>tar -zcvf xxx.tar.gz xxx.txt</code>等价于<code>tar -cvf xxx.tar xxx.txt</code>和<code>gzip xxx.tar</code></p>
+<p>解压文件：<code>tar -xvf all_pic.tgz</code>，一般使用的解压：<code>tar -zxvf tmp.tgz</code></p>
+<p>解压到指定目录：<code>tar zxvf Python-3.8.0.targz -C /home/thanlon/</code></p>
+<p>解压 xz 结尾的文件：<code>xz -d Python-3.8.0.tar.xz</code> 然后使用<code>tar -xf Python-3.8.0.tar</code></p>
+<p>解压缩 bz2 结尾的文件：<code>tar -xjf xx.tar.bz2</code>
+<hr></p>
+<h5 id="8-gzip">8. gzip解压命令</h5>
+<p>gzip 用来压缩文件，是一个使用广泛的压缩程序，被压缩的以 ".gz" 扩展名。gzip可以压缩较大的文件，以 60%～70% 压缩率来节省空间，<font>更多的使用的是 tar</font> :</p>
+<pre><code>-d或--decompress或----uncompress：加开压缩文件
+-f或--force：强行压缩文件
+-h或help：在线帮助
+-l或--list：列出压缩文件的相关信息
+-L或--license：显示版本与权限信息
+-r或--recursive：递归处理，将指定目录下的所有文件以及子文件目录一并处理
+-v或--verbose：显示指令执行过程
+</code></pre>
+
+<p>压缩当前目录每一个文件为.gz文件：<code>gzip *</code></p>
+<p>解压缩文件并列出详细的信息：<code>gzip -dv *</code></p>
+<p>显示压缩文件的信息，并不解压：<code>gzip -l *</code></p>
+<p>压缩一个tar备份文件，扩展名是tar.gz：<code>tar -cf my.tar my.py</code>，<code>gzip -r my.tar</code>
+<hr></p>
+<h5 id="9">9. 查看进程的状态</h5>
+<p>查看 8000 端口有没有正常启动，使用 <code>netstat -tunlp|grep 8000</code>，那么查看进程有没有运行，可以使用 ps 相关命令。格式：<strong><code>ps 参数</code></strong></p>
+<pre><code>-a：显示所有进程
+-u：用户以及其他详细信息
+-x：显示没有控制终端的进程
+</code></pre>
+
+<p>查看那更多可以使用man命令：<code>man ps</code></p>
+<p>查看 Python 进程可以使用：<code>ps -ef | grep python</code>，查看redis、mysql、nginx进程可以使用相同的命令：<code>ps -ef | grep redis</code>、<code>ps -ef | grep mysql</code>、<code>ps -ef | grep nginx</code>。
+<hr></p>
+<h5 id="10-kill">10. kill命令</h5>
+<p>kill 命令用来删除执行中的程序，kill 可以将指定的信息送至程序。</p>
+<p>kill 命令相关的参数：</p>
+<pre><code>-a：当处理当前进程时，不限制命令和进程号的对应关系
+-l &lt;信号编号&gt;：若不加&lt;信号编号&gt;选项，则-l参数会列出全部的信息名称
+-p：指kill命令只打印相关进程的进程号，而不发送任何信号
+-s &lt;信号名称或编号&gt;：指定要送出的信息
+-u：指定用户
+</code></pre>
+
+<p>只有 9 中信号可以无条件终止进程，其它信号进程都有权力忽略，下面是常用的信号：</p>
+<pre><code>HUP    1：终端断线
+INT    2：中断(同Ctrl + C)
+QUIT   3：退出(同Ctrl + \)
+TERM   15：终止
+KILL   9：强制终止
+CONT   18：继续(与STOP相反，fg/bg命令)
+STOP   19：暂停(同Ctrl + Z)
+</code></pre>
+
+<p>kill 进程前可以通过 <code>ps -ef</code> 查看进程 id 等信息：</p>
+<pre><code>用户名   pid                                           进程执行命令
+root    1041     1  0 21:44 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+</code></pre>
+
+<p>比如上面的进程 id 是 1041，可以执行 <code>kill 1041</code>，如果遇到杀不死的进程，可以执行 <code>kill -9 1041</code>，-9 是发给 kill 命令的一个信号，强制杀死信号。
+<hr></p>
+<h5 id="11-killall">11. killall命令</h5>
+<p>通常来讲，复杂软件的服务程序会有多个进程协同为用户提供服务，如果逐个去结束这些进程会比较麻烦，此时可以使用 killall 命令来批量结束某个服务下横徐带来的全部进程。简单来讲，killall 命令一次性可以杀死多个有依赖的进程。</p>
+<p>例如，nginx 启动后有两个进程，可以直接执行<code>killall nginx</code>
+<hr></p>
+<h5 id="12-selinux">12. selinux防火墙</h5>
+<p>防火墙可以防止服务器被恶意攻击，保护系统资源。比如，恶意攻击你的端口进程等。简而言之，防火墙就是定义一些规则，控制那些ip可以访问哪些 ip 不可以访问。定义一些当前服务器允许那些端口可以被访问呢，哪些端口不可以被访问。selinux 是 Linux 内置防火墙、iptables 和 firewalld 是 Linux 的软件防火墙，可能还会有一些硬件防火墙。</p>
+<p>大多数ssh连接不上服务器，都是因为服务器防火墙阻挡了，这里介绍 Linux 内置的防火墙 selinux。其配置文件在 /etc/selinux/config</p>
+<p>查看selinux状态：<code>getenforce</code></p>
+<p>永久关闭selinux：通过修改配置文件，然后重启机器可以永久关闭selinux防火墙：<code>sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config</code>，在使用sed命令之前，可以通过cat 和 grep 命令查看配置文件中的配置状态：<code>grep -i selinux /etc/selinux/config</code></p>
+<p>临时关闭selinux(不需要重启机器，重启后失效)，首先获取selinux状态<code>getenforce</code>，然后临时关闭<code>setenforce</code>
+<hr></p>
+<h5 id="13-iptables">13. iptables防火墙</h5>
+<p>查看 iptables 规则：<code>iptables -L</code></p>
+<p>清空 iptables 规则：<code>iptables -F</code></p>
+<p>关闭 iptables 服务：<code>systemctl stop firwalld</code></p>
+<p>centos7 默认使用 firwalld 作为防火墙，关闭 firwalld 的过程如下：</p>
+<pre><code class="py">systemctl status firewalld # 查看防火墙状体
+systemctl stop firewalld # 关闭防火墙
+systemctl disable firewalld # 关闭防火墙开机启动
+systemctl is-enabled firewalld.service # 检查防火墙是否启动
+</code></pre>
+
+<hr>
+
+<h5 id="14-linux">14. Linux中文显示设置</h5>
+<p>设置 Linux 中文显示，可以防止 Linux 中中文乱码。Linux 下常用的字符集有 GBK 和 UTF-8，GBK实际上企业使用得比较少，广泛使用 UTF-8。</p>
+<pre><code class="python"># 查看系统当前字符集
+echo $LANG
+# 修改字符集
+export LANG=en_US.utf8
+# 或者这样修改字符集
+1.修改配置文件vim /etc/locale.conf
+LANG=&quot;zh_CN.UTF-8&quot;
+2.使生效
+source /etc/locale.conf
+3.更改后查看系统语言变量
+locale
+</code></pre>
+
+<p>如果出现乱码，则：</p>
+<pre><code class="python">1.系统字符集utf8
+2.xshell字符集utf8
+3.文件字符集一致zh_CN.UTF-8
+</code></pre>
+
+<hr>
+
+<h5 id="15-df">15. df命令</h5>
+<p>df命令用于显示磁盘分区上可使用的磁盘空间，默认显示单位为KB。可以使用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<p>常见的参数:</p>
+<pre><code>-h或--human-readable：以可读向较高的方式来显示信息
+-k或--kilobytes：指定区块大小为1024字节
+-T或--print-type：显示文件系统的类型
+--help：显示帮助
+--version：显示版本信息
+</code></pre>
+
+<p>查看系统磁盘设备，默认是KB单位：<code>$ df</code></p>
+<p>使用 -h 参数以KB以上的单位来显示可读性高：<code>$ df -h</code>，查看磁盘使用容量
+<hr></p>
+<h5 id="16-tree">16. tree命令</h5>
+<p>以树状图显示文档目录结构，tree 命令的参数：</p>
+<pre><code>-a：显示所有文件和目录；
+-A：使用ASNI绘图字符显示树状图而非以ASCII字符组合；
+-C：在文件和目录清单加上色彩，便于区分各种类型；
+-d：先是目录名称而非内容；
+-D：列出文件或目录的更改时间；
+-f：在每个文件或目录之前，显示完整的相对路径名称；
+-F：在执行文件，目录，Socket，符号连接，管道名称名称，各自加上&quot;*&quot;，&quot;/&quot;，&quot;@&quot;，&quot;|&quot;号；
+-g：列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码；
+-i：不以阶梯状列出文件和目录名称；
+-l：&lt;范本样式&gt; 不显示符号范本样式的文件或目录名称；
+-l：如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录；
+-n：不在文件和目录清单加上色彩；
+-N：直接列出文件和目录名称，包括控制字符；
+-p：列出权限标示；
+-P：&lt;范本样式&gt; 只显示符合范本样式的文件和目录名称；
+-q：用“？”号取代控制字符，列出文件和目录名称；
+-s：列出文件和目录大小；
+-t：用文件和目录的更改时间排序；
+-u：列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码；
+-x：将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该目录予以排除在寻找范围外。
+</code></pre>
+
+<p>显示当前目录的结构：<code>$ tree</code>，等价于 <code>$ tree .</code></p>
+<p>显示 /home 目录的结构：<code>$ tree /home</code>
+<hr></p>
+<h5 id="17-dns">17. DNS相关</h5>
+<p>DNS（ Domain Name System ）是域名解析系统，万维网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过域名，最终得到该域名对应的IP地址的过程叫做域名解析（ 或主机名解析）。Linux 系统上 dns 配置文件是<code>/etc/resolv.conf</code></p>
+<p>查看 dns 配置文件：<code>$ cat /etc/resolv.conf</code></p>
+<pre><code class="python">[root@instance-mtfsf05r ~]# cat /etc/resolv.conf
+# Generated by NetworkManager
+nameserver 172.16.0.3
+nameserver 172.16.0.2
+options rotate timeout:1
+</code></pre>
+
+<p>可以通过 nslookup 解析域名：<code>nslookup www.blueflags.cn</code>，nslookup 是一个常用的域名查询工具。
+<hr></p>
+<h5 id="18-dns">18. 本地强制dns解析</h5>
+<p>本地解析配置文件在 /etc/hosts，windows 系统在 C:\Windows\System32\drivers\etc\host，可通过修改该配置文件来配置主机对应的域名。强制 dns 解析常用于开发测试，自定义域名。</p>
+<pre><code class="js">[root@instance-mtfsf05r ~]# cat /etc/hosts
+ ip                    主机名
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+172.16.0.4 instance-mtfsf05r instance-mtfsf05r.novalocal
+106.12.115.131  www.thanlon.cn
+</code></pre>
+
+<hr>
+
+<h5 id="19-crond">19. 计划任务crond服务</h5>
+<p>( 1 ) 计划任务
+后台运行，到了预定的时间就会自动执行的任务，前提是：事先手动将计划任务设定好，这就用到了 crond 服务。</p>
+<p>( 2 ) crond服务相关的软件包</p>
+<pre><code>[root@instance-mtfsf05r ~]#  rpm -qa | grep cron
+cronie-1.4.11-23.el7.x86_64
+cronie-anacron-1.4.11-23.el7.x86_64
+crontabs-1.11-6.20121102git.el7.noarch
+</code></pre>
+
+<p>这些包在最小化安装系统时就已经安装了，并且会开机自启动 crond 服务，并为我们提供好编写计划任务的 crontab 命令。</p>
+<p>( 3 ) crontab命令</p>
+<p>crontab 命令被用来提交和管理用户的需要周期性执行的任务，与 windows 下的计划任务类似。</p>
+<p>crontab 命令的语法，<kbd>crontab (选项)(参数)</kbd>：</p>
+<pre><code>-e：编辑该用户的计时器设置；
+-l：列出该用户的计时器设置；
+-r：删除该用户的计时器设置；
+-u&lt;用户名称&gt;：指定要设定计时器的用户名称
+</code></pre>
+
+<p>注意：写计划任务时，命令必须加上绝对路径，否则会出现这种情况：从日志中看，确实触发了计划任务的执行，但是命令却没有执行成功，比如 <code>* * * * * reboot</code> 就会出现这种情况，需要将 reboot 写成 /usr/sbin/reboot</p>
+<p>查看计划任务的执行：<code>$ tail -f /var/log/cron</code>，/var/spool/cron 是存放定时任务的文件。</p>
+<p>确保 crontab 服务运行：<code>$ systemctl status crond</code>$ ps -ef|grep crond`</p>
+<p>检测 crontab 是否开机启动：<code>$ systemctl is-enabled crond</code></p>
+<p>查看 crontab 配置文件：<code>$ cat /etc/crontab</code>：</p>
+<pre><code class="js">SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+</code></pre>
+
+<p>crontab 任务配置基本格式：</p>
+<pre><code class="python">*  *　 *　 *　 *　　command
+分钟(0-59)　小时(0-23)　日期(1-31)　月份(1-12)　星期(0-6,0代表星期天)　 命令
+
+第1列表示分钟0～59 每分钟用*或者 */1表示
+第2列表示小时0～23（0表示0点）
+第3列表示日期1～31
+第4列表示月份1～12
+第5列标识号星期0～6（0表示星期天）
+第6列要运行的命令
+
+星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。
+30 08 * * *  每天8.30去上班  
+逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”
+中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”
+正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。
+*/3 * * * * /usr/sbin/ntpdate ntp1.aliyun.com  每隔三分钟执行下时间同步
+</code></pre>
+
+<blockquote>
+<p><font>command部分一定要用绝对路径来写。</font></p>
+</blockquote>
+<p>下面是一些示例：</p>
+<pre><code class="python"># 每分钟执行一次命令
+* * * * * command
+# 每小时的3,15分组执行命令
+3,15 * * * * command
+# 在上午8-11点的第3和第15分钟执行
+3,15 8-11 * * * command
+# 每晚21:30执行命令
+30 21 * * * command
+# 每周六、日的1:30执行命令
+30 1 * * 6,0 command
+# 每周一到周五的凌晨1点，清空/tmp目录的所有文件(通过which命令查看rm的绝对路径)
+0 1 * * 1-5 /usr/bin/rm -rf /tmp/*
+# 每晚的21:30重启nginx
+30 21 * * * /opt/nginx/sbin/nginx -s reload 
+# 每月的1,10,22日的4:45重启nginx
+45 4 1,10,22 * * /opt/nginx/sbin/nginx -s reload 
+# 每个星期一的上午8点到11点的第3和15分钟执行命令
+3,15 8-11 * * 1 command
+</code></pre>
+
+<blockquote>
+<p><font>执行多条命令使用 "&amp;&amp;" 来连接不同命令，连续执行多条命令使用 ";" 号。</font></p>
+</blockquote>
+<p>将 crontab 规则写入到 crontab 文件中：</p>
+<p>通过命令 <code>crontab -e</code> 打开文件，实际使用的是 vi 打开，然后写入：</p>
+<pre><code class="js">* * * * * /usr/bin/echo 'thanlon' &gt;&gt; /tmp/thanlon.txt
+</code></pre>
+
+<p>查看计划任务：<code>crontab -l</code></p>
+<pre><code class="python">$ tail -f /tmp/thanlon.txt 
+thanlon
+thanlon
+thanlon
+</code></pre>
+
+<p>通过 <code>tail -f /tmp/thanlon.txt</code> 可以看到每分钟向 thanlon.txt 文件追加 “thanlon”
+<hr></p>
+<h5 id="20">20. 软件包管理</h5>
+<p>( 1 ) 使用 rpm 命令管理，需要手动处理关系依赖。rpm 相关的命令：</p>
+<p>安装软件：<code>rpm -ivh filename.rpm</code>，i 表示安装，v 表示显示过程，h 表示以进度条显示</p>
+<p>升级软件：<code>rpm -Uvh filename.rpm</code></p>
+<p>卸载软件：<code>rpm -e filename.rpm</code></p>
+<p>查询软件描述信息：<code>rpm -qpi filename.rpm</code></p>
+<p>列出软件描述信息：<code>rpm -qpl filename.rpm</code></p>
+<p>查询文件属于哪个rpm：<code>rpm -qf filename</code></p>
+<p>较小软件的安装可以选择使用 rpm 安装，比如安装 lrzsz：</p>
+<pre><code class="python"># 下载lrzsz的rpm包
+wget https://rpmfind.net/linux/centos/7.5.1804/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm
+# 安装rpm包
+rpm  -ivh lrzsz-0.12.20-36.el7.x86_64.rpm
+</code></pre>
+
+<p>( 2 ) yum命令
+yum 命令是在 Fedora 和 RedHat 以及 SUSE 中基于 rpm 的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
+<p>通过 yum 自动安装软件，自动处理依赖关系。yum 安装软件，其实就是在线搜索一个 rpm 包，然后自动 rpm -ivh 包.rpm，比如安装redis：<code>yum install redis</code>。yum提供了查找、安装、删除某一个或者一组甚至全部软件包的命令，而且命令简洁而又好记。yum(选项)(参数)</p>
+<pre><code>-h：显示帮助信息；
+-y：对所有的提问都回答“yes”；
+-c：指定配置文件；
+-q：安静模式；
+-v：详细模式；
+-d：设置调试等级（0-10）；
+-e：设置错误等级（0-10）；
+-R：设置yum处理一个命令的最大等待时间；
+-C：完全从缓存中运行，而不去下载或者更新任何头文件。
+</code></pre>
+
+<p>部分常用的命令包括：</p>
+<p>自动搜索最快镜像插件：<code>yum install yum-fastestmirror</code></p>
+<p>查看当前yum仓库有没有mariadb：<code>yum search mariadb</code></p>
+<p>卸载软件：<code>yum remove mariadb-server</code></p>
+<p>( 3 ) yum源的配置
+使用 <code>cd /etc/yum.repos.d/</code> 进入 yum.repos.d 目录，目录下的 *.repo 结尾的文件是 yum 源文件。如果我们需要修改 yum 源为 aliyun 的 yum 源仓库，可以到<a href="https://opsx.alibaba.com/mirror"> <strong>阿里巴巴开源镜像站</strong> </a>找到 centos 标签点击"帮助"：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20191003181618134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>在 Linux 上执行上面的命令：</p>
+<pre><code>wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+</code></pre>
+
+<p>下载阿里巴巴的 yum 源文件。接下来要清空 yum 的缓存：<code>$ yum clean all</code>。一般还需要安装 Linux 的额外仓库源，也就是 epel 源，继续在阿里云源上找，找到 epel 标签。在帮助里面找到：</p>
+<pre><code>wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+</code></pre>
+
+<p>将这一条命令放在 Linux 中执行，安装 epel 源。最后，为了便于加速下载，需要生成 yum 缓存：<code>yum makecache</code>
+<hr></p>
+<h5 id="21">21. 系统服务管理命令</h5>
+<p>系统服务管理命令 systemctl，只有在 centos7 下才有，centos6 中的是 service 命令。centos6 中的 service 的使用：<code>$ service network start</code>，<code>$ service network stop</code>，<code>$ service network restart</code>。</p>
+<p>下面是使用 systemctl 命令来管理 redis 服务，，注意使用只有通过 yum 安装的软件，才可以使用 systemctl 命令去管理：</p>
+<p>安装 redis：<code>yum install redis -y</code></p>
+<p>启动 redis 服务：<code>systemctl start redis</code></p>
+<p>重启 redis 服务：<code>systemctl restart redis</code></p>
+<p>停止 redis 服务：<code>systemctl stop redis</code></p>
+<p>查看 redis 状态：<code>systemctl status redis</code>
+<hr></p>
+<h5 id="22-xz">22. xz命令</h5>
+<p>有时候我们会遇到 xxx.tar.xz 命令，xz 压缩包的格式其实比 7z 要小的多，但是压缩的时间要长一些。其实这种文件采用了两层的压缩，第一层采用 tar 的压缩方式，第二层采用的是 xz 的压缩方式。解压这类文件需要先使用 xz 命令解压所，再使用 tar 命令解压所文件。前面已经介绍过 tar命令，在这里补充说以下xz命令。下面是xz相关的命令：</p>
+<pre><code class="python"># 压缩文件到指定路径，不删除原文件，可以指定文件名
+xz -c -z tmp.txt &gt; ./tmp.txt.xz
+# 例子
+thanlon@thanlon-master:~/下载$ xz -c -z eclipse-inst-linux64.tar&gt;./eclipse-inst-linux64.tar.xz
+# 解压缩文件，不删除原文件，且可自定义解压后的文件名和文件格式
+xz -c -d tmp.txt.xz &gt; tmp.txt
+# 直接解压缩filename.tar.xz
+tar xvfJ filename.tar.xz
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

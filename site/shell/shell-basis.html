@@ -1,0 +1,2912 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/shell/shell-basis.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../zabbix/install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="../linux/linux-advance.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../centos/software-install.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#shell">Shell基础</a></li>
+            <li><a href="#1-shell">1. shell介绍</a></li>
+            <li><a href="#2-shell">2. Shell功能</a></li>
+            <li><a href="#3-shell">3. 如何写Shell脚本</a></li>
+            <li><a href="#4-shell">4. shell脚本运行方法</a></li>
+            <li><a href="#5-shell">5. shell特殊符号</a></li>
+            <li><a href="#6-shell">6. shell管道的应用</a></li>
+            <li><a href="#7-shell">7. shell重定向</a></li>
+            <li><a href="#8-shell">8. shell数学运算</a></li>
+            <li><a href="#9">9. 脚本退出</a></li>
+            <li><a href="#10">10. 添加脚本说明信息</a></li>
+            <li><a href="#11">11. 格式化输出命令</a></li>
+            <li><a href="#12">12. 颜色代码的输出</a></li>
+            <li><a href="#13">13. 格式化输入</a></li>
+            <li><a href="#14-shell">14. shell变量</a></li>
+            <li><a href="#15">15. 变量分类</a></li>
+            <li><a href="#16">16. 变量管理</a></li>
+            <li><a href="#17">17. 数组介绍</a></li>
+            <li><a href="#18">18. 基本数组</a></li>
+            <li><a href="#19">19. 关联数组</a></li>
+            <li><a href="#20">20. 职员信息查询系统</a></li>
+            <li><a href="#21">21. 数学比较运算</a></li>
+            <li><a href="#22">22. 文件比较运算</a></li>
+            <li><a href="#23">23. 字符串比较运算</a></li>
+            <li><a href="#24">24. 逻辑运算</a></li>
+            <li><a href="#25">25. 赋值运算</a></li>
+            <li><a href="#26">26. 特殊变量</a></li>
+            <li><a href="#27-if">27. 单 if 语句</a></li>
+            <li><a href="#28-if-then-else">28. if-then-else</a></li>
+            <li><a href="#29-if">29. if 高级应用</a></li>
+            <li><a href="#30-for">30. for 循环介绍</a></li>
+            <li><a href="#31-for">31. for 循环语法</a></li>
+            <li><a href="#32">32. 循环控制语句</a></li>
+            <li><a href="#33-while">33. while循环介绍</a></li>
+            <li><a href="#34-while">34. while循环语法</a></li>
+            <li><a href="#35-while">35. while循环案例</a></li>
+            <li><a href="#36-while">36. while循环控制与语句嵌套</a></li>
+            <li><a href="#37-until">37. until循环介绍</a></li>
+            <li><a href="#38-until">38. until语法</a></li>
+            <li><a href="#39-until">39. until案例</a></li>
+            <li><a href="#40-case">40. case介绍</a></li>
+            <li><a href="#41-case">41. case语法</a></li>
+            <li><a href="#42">42. 函数介绍</a></li>
+            <li><a href="#43">43. 函数语法</a></li>
+            <li><a href="#44-nginx">44. nginx启动管理脚本</a></li>
+            <li><a href="#45">45. 正则表达式介绍</a></li>
+            <li><a href="#46">46. 特殊字符</a></li>
+            <li><a href="#47-posix">47. 正则表达式POSIX字符</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="" src="../imgs/shell/202011060220.jpg" /></p>
+<h4 id="shell">Shell基础</h4>
+<hr>
+
+<h5 id="1-shell">1. shell介绍</h5>
+<p>shell 是一个程序，采用C语言来编写，是用户和 Linux内核 ( kernel ) 沟通的桥梁。<font>它既是一种命令语言，又是一种解释性的编程语言</font>。kernel 负责为软件服务，接受用户或软件指令驱动硬件完成工作。shell 是命令解释器，把用户输入的命令解释为二进制交给 kernel 去工作。
+<hr></p>
+<h5 id="2-shell">2. Shell功能</h5>
+<p>shell 功能有：命令解释功能；启动程序；输入输出重定向；管道连接；文件名的置换；变量的维护；环境控制；shell 编程。
+<font>shell 脚本就是将完成一个任务所有的命令按照执行的前后顺序，自上而下写入到一个文本文件中，然后给予执行权限 。</font>
+<hr></p>
+<h5 id="3-shell">3. 如何写Shell脚本</h5>
+<p>Shell 脚本的命名。要见名知意，如 nginx 的安装，可以写作 “nginx_install”。名字不要太长，最好控制在 30 个字节以内。虽然 Linux 系统中没有扩展名的概念，但建议还是使用.sh来结尾。</p>
+<p>Shell 脚本的格式。<font>Shell 脚本的开头必须指定脚本的运行环境</font>，以 <strong><code>#!</code></strong> 这个特殊符号组合完成。如 <strong><code>#!/bin/bash</code></strong> 指定该脚本运行解析由 <strong><code>/usr/bin/bash</code></strong> 来完成。解释环境的另外一种写法是： <strong><code>#!/usr/bin/env bash | python | perl</code></strong>。</p>
+<p>Shell 脚本注释的使用。Shell 脚本中使用 <strong><code>#</code></strong> 号来注释文本，注意 <strong><code>#!</code></strong> 是特例，是专门用来指定脚本的运行环境。一般要带上脚本信息如：</p>
+<pre><code class="python"># Author：Nai He
+# Created Time：2020/03/29 20:00
+# Release：1.0
+# Script Description：nginx install script
+</code></pre>
+
+<hr>
+
+<h5 id="4-shell">4. shell脚本运行方法</h5>
+<p>Shell 脚本的运行方法有两种，一种是给执行权限运行，另一种是解释器直接运行(不需要给执行权限)。第一种：给脚本一个可执行权限后，找到该脚本的位置运行。第二种：可以使用bash解释器直接执行shell脚本，如<code>bash nginx_install.sh</code>。也可以使用sh解释器来执行shell，如<code>sh nginx_install.sh</code>，当然还可以使用其它解释器。查看系统中支持的shell解释器：</p>
+<pre><code class="py">$ cat /etc/shells 
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/bin/dash
+/usr/bin/dash
+</code></pre>
+
+<hr>
+
+<h5 id="5-shell">5. shell特殊符号</h5>
+<table>
+<thead>
+<tr>
+<th>~</th>
+<th>!</th>
+<th>$</th>
+<th>+ - * \ %</th>
+<th>&amp;</th>
+<th>*</th>
+<th>?</th>
+<th>;</th>
+<th>|</th>
+<th>\</th>
+<th>``</th>
+<th>'</th>
+<th>"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>家目录</td>
+<td>!表示执行历史命令，!!执行上一条命令</td>
+<td>变量中取内容</td>
+<td>对应数学运算，加减乘除取余</td>
+<td>后台执行</td>
+<td>shell中的通配符，匹配所有</td>
+<td>匹配一个字符</td>
+<td>在shell中一行执行多条命令，命令之间用分好分隔</td>
+<td>管道符，上一个命令的输出作为下一个命令的输入</td>
+<td>转义字符</td>
+<td>反引号，命令中执行命令</td>
+<td>脚本中字符串用单引号引起来，单引号不解释变量</td>
+<td>脚本中出现字符串可以使用双引号引起来，双引号解释变量</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h5 id="6-shell">6. shell管道的应用</h5>
+<p>管道在 shell 中使用最多，很多组合命令都需要使用管道来完成输出。管道符其实就是下一个命令对上一个命令的输出做处理。
+<hr></p>
+<h5 id="7-shell">7. shell重定向</h5>
+<table>
+<thead>
+<tr>
+<th>&gt;</th>
+<th>&gt;&gt;</th>
+<th>&lt;</th>
+<th>&lt;&lt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重定向输入，覆盖原数据</td>
+<td>重定向追加输入，在原数据末尾添加</td>
+<td>重定向输出</td>
+<td>重定向追加输出</td>
+</tr>
+</tbody>
+</table>
+<p>值得注意的是重定向输入内容到同一个文件会先将原文件清空再写入，重定向输入和追加输入都比较常见，也很理解，主要重定向输出。</p>
+<p>重定向输出：</p>
+<pre><code class="python"># 重定向输出，统计数据流和统计文本
+thanlon@thanlon-master:~$ wc &lt; naihe.txt 
+ 5  5 10
+ thanlon@thanlon-master:~$ wc naihe.txt 
+ 5  5 24 naihe.txt
+</code></pre>
+
+<p>重定向追加输出：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Author：Nai He
+#Created Time：2020/03/31 08:30
+#Script Description：harddisk partition script
+fdisk /dev/sdb &lt;&lt;EOF
+n
+p
+3
+
++100M
+w
+EOF
+</code></pre>
+
+<blockquote>
+<p>问题：有四块硬盘 a、b、c、d，现要求每块硬盘分两个区，每个分区磁盘空间占硬盘空间的1/2，并且一个分区做成LVM-LVM100分区，挂载/data/lv100，另一个分区做成raid5分区，挂载/data/raid5，要求开机挂载。</p>
+</blockquote>
+<hr>
+
+<h5 id="8-shell">8. shell数学运算</h5>
+<p>expr 命令只能做整数运算，注意空格：</p>
+<pre><code class="python"># 加法
+thanlon@thanlon-master:~$ expr 10 + 10
+20
+# 减法
+thanlon@thanlon-master:~$ expr 10 - 10
+0
+# 乘法
+thanlon@thanlon-master:~$ expr 10 \* 10
+100
+# 除法
+thanlon@thanlon-master:~$ expr 10 / 10
+1
+# $?是返回上一条命令是否执行成功的判断，0表示执行成功，非0表示上一条命令没有执行成功
+thanlon@thanlon-master:~$ expr 10 % 10.0
+expr: 非整数参数
+thanlon@thanlon-master:~$ echo $?
+2
+thanlon@thanlon-master:~$ expr 10 % 10
+0
+thanlon@thanlon-master:~$ echo $?
+1
+thanlon@thanlon-master:~$ expr 10 % 4
+2
+thanlon@thanlon-master:~$ echo $?
+0
+# null是系统的回收站，黑洞
+# 把命令expr 8 + 8执行的结果输出到/dev/null，用echo $?查看执行成功与否
+thanlon@thanlon-master:~$ expr 8 + 8 &amp;&gt;/dev/null;echo $?
+0
+thanlon@thanlon-master:~$ expr 8 + 8.0 &amp;&gt;/dev/null;echo $?
+2
+</code></pre>
+
+<p>使用 let 做计算，也是整数级的运算，注意不要使用空格：</p>
+<pre><code class="python"># 加
+thanlon@thanlon-master:~$ let sum=10+10
+thanlon@thanlon-master:~$ echo $sum 
+20
+# 减
+thanlon@thanlon-master:~$ let a=10-5
+thanlon@thanlon-master:~$ echo $a
+5
+# 乘
+thanlon@thanlon-master:~$ let a=10*5
+thanlon@thanlon-master:~$ echo $a
+50
+# 除
+thanlon@thanlon-master:~$ let a=10/5
+thanlon@thanlon-master:~$ echo $a
+2
+# 取余
+thanlon@thanlon-master:~$ let a=10%5
+thanlon@thanlon-master:~$ echo $a
+0
+</code></pre>
+
+<p>使用 bc 计算器处理浮点运算，没有该模块可以使用 <strong><code>yum install bc</code></strong> 来安装：</p>
+<pre><code class="python"># 加法
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'.
+10+10
+20
+10 +10
+20
+10 + 10
+20
+# 减法
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'.
+20-10
+10
+20-10.3
+9.7
+# 乘法
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+10*1.0
+10.0
+# 除法
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+32/20.1
+1
+# 取余
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+19%29
+19
+19%29.8
+19.0
+# 混合运算
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+100*100/100
+100
+100*(2+3)/10
+50
+# 支持小数，保留指定位数的小数
+thanlon@thanlon-master:~$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+scale=2
+100/3
+33.33
+</code></pre>
+
+<p>以上都是在交互，<font>shell 是不可以交互的</font>，我们可以举个计算内存使用率的例子，把计算融入到 shell 中：</p>
+<pre><code class="python"># 查看内存空间相关
+thanlon@thanlon-master:~$ free -mh
+              总计         已用        空闲      共享    缓冲/缓存    可用
+内存：       7.6Gi       1.8Gi       2.7Gi       538Mi       3.1Gi       5.0Gi
+交换：       477Mi          0B       477Mi
+# 计算内存的使用率
+thanlon@thanlon-master:~$ echo &quot;`echo &quot;scale=2;1.8/7.6*100&quot;|bc`%&quot;
+23.00%
+# 计算内存的使用率，内部的echo可以使用单引号
+thanlon@thanlon-master:~$ echo &quot;`echo 'scale=2;1.8/7.6*100'|bc`%&quot;
+23.00%
+</code></pre>
+
+<p>使用 bc 计算器处理浮点运算，scale=2 代表小数点保留两位：</p>
+<pre><code class="python"># 加
+thanlon@thanlon-master:~$ echo 'scale=2;100+100'|bc
+200
+# 减
+thanlon@thanlon-master:~$ echo 'scale=2;100-100'|bc
+0
+# 乘
+thanlon@thanlon-master:~$ echo 'scale=2;100*100'|bc
+10000
+# 除
+thanlon@thanlon-master:~$ echo 'scale=2;100/100'|bc
+1.00
+# 取余
+thanlon@thanlon-master:~$ echo 'scale=2;100%100'|bc
+0
+</code></pre>
+
+<p>双小圆括号运算，在shell中((　))也可以用来做数学运算，注意这种运算也是整数级的运算：</p>
+<pre><code class="py">thanlon@thanlon-master:~$ echo $((100+100))
+200
+thanlon@thanlon-master:~$ echo $((100-100))
+0
+thanlon@thanlon-master:~$ echo $((100*100))
+10000
+thanlon@thanlon-master:~$ echo $((100/100))
+1
+thanlon@thanlon-master:~$ echo $((100%100))
+0
+# 开方运算
+thanlon@thanlon-master:~$ echo $((100**3))
+1000000
+</code></pre>
+
+<hr>
+
+<h5 id="9">9. 脚本退出</h5>
+<p>exit NUM 退出脚本，释放系统资源，NUM 代表一个整数，代表返回值。注意：<font>NUM 不能太大，它有个范围值 1~255</font>。</p>
+<pre><code class="python"># 正常情况下，看上一步是否执行成功，得到结果是０表示成功如
+thanlon@thanlon-master:~$ echo $((100+100))
+200
+thanlon@thanlon-master:~$ echo $?
+0
+# 当然也可以定义返回的内容，具体操作如下：新建shell文件
+thanlon@thanlon-master:~$ vim exit_code.sh
+# 在该shell文件中输入以下内容，注意NUM不能太大
+#!/bin/bash
+echo 'thanlon'
+exit 66
+# 执行这个shell脚本exit_code.sh，然后看成功的返回值
+thanlon@thanlon-master:~$ sh exit_code.sh 
+thanlon
+thanlon@thanlon-master:~$ echo $?
+66
+</code></pre>
+
+<h5 id="10">10. 添加脚本说明信息</h5>
+<p>每次写脚本之前，都重新写一次信息说明，不过这样比较麻烦。我们可以打开一个以 <kbd>.sh</kbd> 结尾的新文件时，自动添加这些说明信息。具体操作如下：</p>
+<pre><code class="python"># 编辑配置文件，我这里用的是ubuntu示例
+thanlon@thanlon-master:~$ sudo vim /etc/vim/vimrc
+# 在文件末尾添加下面的内容
+autocmd BufNewFile *.sh exec &quot;:call MESS()&quot;
+func MESS()
+        call append(0,&quot;#!/usr/bin/bash&quot;)
+        call append(1,&quot;#Description：&quot;)
+        call append(2,&quot;#Author: thanlon@sina.com&quot;)
+        call append(3,&quot;#Realease：1.0&quot;)
+        call append(4,&quot;#Create Time：&quot;.strftime(&quot;%Y/%m/%d %H:%M&quot;))
+endfunc
+</code></pre>
+
+<p>这样每次新建文件，这些信息就会被自动加入：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200412105453517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="11">11. 格式化输出命令</h5>
+<p>一个程序有 0 个或 0 个以上的输入，有一个或一个以上的输出。格式化输出命令是 <kbd>echo</kbd>，它的功能是将内容输出到默认的显示设备中，<font>一般起到提示的作用!</font> echo 默认会将输出的字符串送到标准输出，输出的字符串之间用空白字符隔开，并在最后加上换行号。命令选项：</p>
+<table>
+<thead>
+<tr>
+<th>-n</th>
+<th>-e</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不在最后自动换行</td>
+<td><font>若字符串出现需要转义的字符，需要特别加以处理</font>，不会将转义字符当做一般字符输出。</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">thanlon@thanlon-master:~$ echo &quot;Login:&quot;;read
+Login:
+thanlon
+thanlon@thanlon-master:~$ echo -n &quot;Login:&quot;;read
+Login:thanlon
+thanlon@thanlon-master:~$ echo &quot;date:&quot;;date +%F;
+date:
+2020-04-02
+thanlon@thanlon-master:~$ echo -n &quot;date:&quot;;date +%F;
+date:2020-04-02
+</code></pre>
+
+<p>转义字符：</p>
+<table>
+<thead>
+<tr>
+<th>\a</th>
+<th>\b</th>
+<th>\c</th>
+<th>\f</th>
+<th>\n</th>
+<th>\r</th>
+<th>\t</th>
+<th>\v</th>
+<th>\</th>
+<th>\nnn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发出警告声</td>
+<td>删除前一个字符</td>
+<td>最后不加上换行符号，与命令选项-n相同</td>
+<td>换行但光标仍停留在原来的位置</td>
+<td>换行且光标移动到行首</td>
+<td>管标移动到首行，但是不换行</td>
+<td>插入tab</td>
+<td>与\f相同</td>
+<td>插入\字符</td>
+<td>插入nnn(八进制)所代表的ASCII字符</td>
+</tr>
+</tbody>
+</table>
+<p><kbd>常用的转义转义字符 \a</kbd>:</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo &quot;\a\a\a\a\a&quot;
+\a\a\a\a\a
+thanlon@thanlon-master:~$ echo -e &quot;\a\a\a\a\a&quot;
+
+thanlon@thanlon-master:~$ 
+</code></pre>
+
+<p><kbd>常用的转义字符 \t</kbd>:</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo &quot;thanlon&quot;
+thanlon
+thanlon@thanlon-master:~$ echo -e &quot;\tthanlon&quot;
+    thanlon
+</code></pre>
+
+<p><kbd>常用的转义字符 \n</kbd>:</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo &quot;\n&quot;
+\n
+# echo本身输出一个换行，所有有两次换行
+thanlon@thanlon-master:~$ echo -e &quot;\n&quot;
+
+
+thanlon@thanlon-master:~$ 
+</code></pre>
+
+<p><kbd>常用的转义字符 \b</kbd>:</p>
+<pre><code class="python"># 必须在同一行才能删除（不太确定是在转义之前输出了换行）
+thanlon@thanlon-master:~$ echo -e &quot;a\b&quot;
+a
+
+thanlon@thanlon-master:~$ echo -e -n &quot;a\b&quot;
+thanlon@thanlon-master:~$ 
+</code></pre>
+
+<p><kbd>常用的转义字符 \c</kbd>:</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo -e &quot;thanlon\c&quot;
+thanlonthanlon@thanlon-master:~$ echo -n &quot;thanlon&quot;
+thanlonthanlon@thanlon-master:~$ echo -n &quot;thanl\con&quot;
+thanl\conthanlon@thanlon-master:~$ echo -e &quot;thanl\con&quot;
+</code></pre>
+
+<p><kbd>应用1：倒计时脚本 time.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+# Author：thanlon@sina.com
+# Create Time：2020/04/02 14:21
+# Release：1.0
+# Script Description：countdowm script
+for time in `seq 9 -1 0`;do
+        echo -n -e &quot;\b$time秒&quot;
+        sleep 1
+done
+echo
+</code></pre>
+
+<p><kbd>应用2：写一个水果商店的脚本，fruits_shop.sh：</kbd></p>
+<pre><code class="bash">#!/usr/bin/bash
+# Author：thanlon@sina.com
+# Create Time：2020/04/02 14:21
+# Release：1.0
+
+echo -e &quot;\t\tFruits Shop&quot;
+echo -e &quot;\t1) Apple&quot;
+echo -e &quot;\t2) Orange&quot;
+echo -e &quot;\t3) Banana&quot;
+echo -n &quot;Which do you chose: &quot;
+read
+</code></pre>
+
+<p><kbd>执行 fruits_shop.sh 输出记录</kbd>：</p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash fruits_shop.sh
+        Fruits Shop
+    1) Apple
+    2) Orange
+    3) Banana
+Which do you chose:
+</code></pre>
+
+<hr>
+
+<h5 id="12">12. 颜色代码的输出</h5>
+<p>颜色的格式是：<font>echo -e "\033[背景色:字体颜色 字符串\033[属性效果"</font></p>
+<p>字体颜色范围：30-37</p>
+<pre><code class="python"># 在系统中执行才可以看到字体颜色哦
+thanlon@thanlon-master:~$ echo -e &quot;\033[30m黑色字体\033[0m&quot;
+黑色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[31m红色字体\033[0m&quot;
+红色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[32m绿色字体\033[0m&quot;
+绿色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[33m黄色字体\033[0m&quot;
+黄色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[34m蓝色字体\033[0m&quot;
+蓝色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[35m紫色字体\033[0m&quot;
+紫色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[36m天蓝色字体\033[0m&quot;
+天蓝色字体
+thanlon@thanlon-master:~$ echo -e &quot;\033[37m白色字体\033[0m&quot;
+白色字体
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200402153541192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>字体背景颜色：40-47</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo -e &quot;\033[40:35m黑底\033[0m&quot;
+黑底
+thanlon@thanlon-master:~$ echo -e &quot;\033[40:37m黑底\033[0m&quot;
+黑底
+thanlon@thanlon-master:~$ echo -e &quot;\033[41:37m红底\033[0m&quot;
+红底
+thanlon@thanlon-master:~$ echo -e &quot;\033[42:37m绿底\033[0m&quot;
+绿底
+thanlon@thanlon-master:~$ echo -e &quot;\033[43:37m黄底\033[0m&quot;
+黄底
+thanlon@thanlon-master:~$ echo -e &quot;\033[44:37m蓝底\033[0m&quot;
+蓝底
+thanlon@thanlon-master:~$ echo -e &quot;\033[45:37m紫底\033[0m&quot;
+紫底
+thanlon@thanlon-master:~$ echo -e &quot;\033[46:37m天蓝底\033[0m&quot;
+天蓝底
+thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m白底\033[0m&quot;
+白底
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200402153652213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>最后面的控制选项说明：</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m\033[0m&quot;
+thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m\033[1m&quot;
+thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m\033[4m&quot;
+thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m\033[5m&quot;
+thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m\033[7m&quot;
+thanlon@thanlon-master:~$ echo -e &quot;\033[47:37m\033[8m&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200402151052797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+设置前景色：</p>
+<p>| \033[nA  | \033[nB  | \033[nC  | \033[nD  | \033[y;xH  | \033[2J| \033[K | \033[s  | \033[u  | \033[?25l | \033[?25h  |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| 光标上移n行 | 光标下移n行 | 光标右移n行 |  光标左移n行| 设置光标的位置 | 清屏 | 清除从光标到行尾的内容 | 保存光标的位置 | 回复光标的位置 | 隐藏光标 | 显示光标 |</p>
+<hr>
+
+<h5 id="13">13. 格式化输入</h5>
+<p>格式化输入的命令是 read，默认接受键盘的输入，回车符代表输入结束。read命令的相关参数如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>-p</th>
+<th>-t</th>
+<th>-s</th>
+<th>-n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打印信息</td>
+<td>限制时间</td>
+<td>不回显</td>
+<td>输入字符的个数</td>
+</tr>
+</tbody>
+</table>
+<p>示例1：简单使用</p>
+<p><kbd>format_read.sh：</kbd></p>
+<pre><code class="bash">#!/usr/sbin/bash
+clear
+echo -n 'Login：'
+read
+echo -n 'Password：'
+read
+</code></pre>
+
+<p><kbd>bash format_read.sh</kbd>：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020040608450567.png" /></p>
+<p>示例2：输出输入的值</p>
+<p><kbd>format_read.sh：</kbd></p>
+<pre><code class="bash">#!/usr/sbin/bash
+clear
+echo -n 'Login：'
+read username
+echo -n 'Password：'
+read password
+echo &quot;The user name and password you input are $username and $password!&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200406091522666.png" /></p>
+<blockquote>
+<p>如果不使用变量来接受输入的登录的用户名、密码的值，那么输入的值在内存中就定位不到位置（找不到）！</p>
+</blockquote>
+<p>示例3：设置不回显密码</p>
+<p><kbd>format_read.sh:</kbd></p>
+<pre><code class="bash">#!/usr/sbin/bash
+clear
+echo -n 'Login：'
+read username
+echo -n 'Password：'
+read -s password
+echo
+echo &quot;The user name and password you input are $username and $password!&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020040609204144.png" /></p>
+<p>示例4：设置超时退出时间</p>
+<p><kbd>format_read.sh</kbd>:</p>
+<pre><code class="bash">#!/usr/sbin/bash
+clear
+echo -n 'Login：'
+read username
+echo -n 'Password：'
+read -s -t 10 password # 或者read -s -t 10 password，10秒没输入密码，就会自动退出
+echo
+echo &quot;The user name and password you input are $username and $password!&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200406092619631.png" /></p>
+<p>示例5：设置输入内容的位数限制</p>
+<pre><code class="shell">#!/usr/sbin/bash
+clear
+echo -n 'Login：'
+read username
+echo -n 'Password：'
+read -s -t10 -n6 password # 当输入第6位的时候，自动跳出
+echo
+echo &quot;The user name and password you input are $username and $password!&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200406093417393.png" /></p>
+<p>示例6：使用 -p 参数代替 echo</p>
+<pre><code class="bash">#!/usr/sbin/bash
+clear
+#echo -n 'Login：'
+#read username
+#代替上面两行代码
+read -p &quot;Login：&quot; username
+#echo -n 'Password：'
+#read -s -t10 -n6 password
+read -p &quot;Password：&quot; -s -t20 -n6 password
+echo
+echo &quot;The user name and password you input are $username and $password!&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200406093417393.png" /></p>
+<p>应用：CentOS 7 登录界面</p>
+<pre><code class="bash">#!/usr/bin/bash
+clear
+
+echo &quot;CentOS Linux 7（Core）&quot;
+echo -e &quot;Kernel `uname -r` on `uname -m`\n&quot;
+echo -n &quot;$HOSTNAME login：&quot;
+#还可以使用`uname -n`获取主机名称
+#echo -n &quot;`uname -n` login：&quot;
+read username
+read  -p &quot;password：&quot; -s -n6 -t10 password
+echo
+#echo &quot;The password you input is “$password”!&quot;
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200406110740849.png" /></p>
+<blockquote>
+<p>uname -r：获取Linux的版本号；uname -m：获取系统平台；uname -n：获取主机名称</p>
+</blockquote>
+<hr>
+
+<h5 id="14-shell">14. shell变量</h5>
+<p>在编程中，我们总有一些数据存放在内存以待后续使用时快速取出来。内存在系统启动的时候被按照1B一个单位编号（16进制编号），并对内存的使用情况做记录，保存在内存跟踪表中。</p>
+<blockquote>
+<p>变量是编程中最常用的一种临时在内存中存取数据的一种方式。</p>
+</blockquote>
+<hr>
+
+<h5 id="15">15. 变量分类</h5>
+<p>① 本地变量：用户私有变量，只有本用户才可以使用，保存在家目录下的 <kbd>.bash_profile</kbd> 或者 <kbd>.bashrc</kbd> 文件中。<font>.bash_profile 中会加载 .bashrc</font> 。</p>
+<p>② 全局变量：所有用户都可以使用，保存在 <kbd>/etc/profile</kbd> 或者 <kbd>/etc/bashrc</kbd>，其中 <font>profile 会加载 bashrc</font>，全局变量的生命周期是计算机开机到关机。</p>
+<p>③ 用户自定义变量：用户自定义的变量，如终端中写的临时变量，只作用于本终端。还有脚本中定义的变量作用于脚本执行的时候，这些都是用户自定义变量。</p>
+<blockquote>
+<p>本地变量会在登录成功以后，把变量从文件中加载到内存。而全局变量是在用户登录之前，把所有变量从文件中加载到内存。</p>
+</blockquote>
+<hr>
+
+<h5 id="16">16. 变量管理</h5>
+<p>1）定义变量</p>
+<p>① 变量的格式是：变量名=值，<font>在 shell 变成中变量名和等号之间不能有空格。</font></p>
+<p>② 变量的命名规则：</p>
+<ul>
+<li>
+<p>只能使用英文字母、数字、下划线，首个字符不能是数字</p>
+</li>
+<li>
+<p>中间不能有空格，可以使用下划线</p>
+</li>
+<li>
+<p>不能使用标点符号</p>
+</li>
+<li>
+<p>不能使用bash里的关键字</p>
+</li>
+</ul>
+<blockquote>
+<p>字符串要使用单引号或者双引号引起来，可以使用help命令查看保留的关键字。<font>shell 区分大小写，可以把变量名写成大写，就不会和命令冲突了</font>。</p>
+</blockquote>
+<p>2）取消变量</p>
+<p>可以在 <kbd>.bashrc</kbd>中定义私有变量，然后使用 source 命令将私有变量加载到内存中，最后使用 <kbd>unset</kbd> 命令取消变量，也就是把变量销毁，释放内存空间。注意前面说过在 <kbd>.bashrc</kbd> 中定义的变量会在下次用户登录成功之后，加载到内存中。</p>
+<pre><code class="python"># 编辑.bashrc文件，在文件最后加上：MYSITE='www.thanlon.cn'  
+thanlon@thanlon-master:~$ vim ~/.bashrc
+# 输出这个变量，因为还没有加载到内存，所以不存在
+thanlon@thanlon-master:~$ echo $MYSITE
+
+# 将设置的变量加载到内存
+thanlon@thanlon-master:~$ source .bashrc 
+# 输出设置的变量MYSITE
+thanlon@thanlon-master:~$ echo $MYSITE
+www.thanlon.cn
+# 取消变量
+thanlon@thanlon-master:~$ unset MYSITE
+# 检查变量是否还在内存中，发现已不存在
+thanlon@thanlon-master:~$ echo $MYSITE
+
+thanlon@thanlon-master:~$
+</code></pre>
+
+<blockquote>
+<p>unset 后面直接跟变量名，不要加上$符号!</p>
+</blockquote>
+<p>3）定义全局变量</p>
+<pre><code class="python"># 编辑/etc/profile
+thanlon@thanlon-master:~$ sudo vim /etc/profile
+# 在末尾加上下面给的内容（设置一个全局变量）
+export MYSITE='www.thanlon.com'
+# 加载到内存
+thanlon@thanlon-master:~$ source /etc/profile
+# 输出变量
+thanlon@thanlon-master:~$ echo $MYSITE
+www.thanlon.com
+</code></pre>
+
+<blockquote>
+<p>注意：加了 export，$MYSITE 就是一个全局变量，计算机开机就被加载到内存中。但是如果不加 export，那么 $MYSITE 就是一个本地用户变量，在切换用户后变量就没有了！<font>如果在 /etc/profile中设置了全局变量(不加export)，在.bashrc也设置了同名的变量，那么谁最后加载到内存(source)，这个变量就是谁中配置的</font>。</p>
+</blockquote>
+<hr>
+
+<h5 id="17">17. 数组介绍</h5>
+<p>变量只能存一个值，但是当需要存储很多个值的时候，定义很多个变量是不可行的，所以引出了数组。数组和变量都可以存数据，不同之处在于数组可以存多个值，而变量只能存一个值。
+<hr></p>
+<h5 id="18">18. 基本数组</h5>
+<p>数组可以让用户一次赋予多个值，需要读取数据时只需要通过索引调用就可以方便读出来。</p>
+<p>( 1 ) 数组语法</p>
+<pre><code class="python">数组名称 = (元素1, 元素2, 元素3,...)
+</code></pre>
+
+<p>( 2 ) 数组的读取</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/12 10:51
+arr01=('thanlon' 'kiku' 'kili')
+echo ${arr01[0]}
+echo ${arr01[1]}
+echo ${arr01[2]}
+</code></pre>
+
+<blockquote>
+<p>同大多数编程语言中的数组一样，数组的索引是从0开始的。</p>
+</blockquote>
+<p>( 3 ) 数组赋值</p>
+<p>① 一次赋一个值</p>
+<pre><code class="python">array[0]='thanlon'
+array[1]='kiku'
+array[2]='kili'
+</code></pre>
+
+<p>② 一次赋多个值</p>
+<pre><code class="python">array01=(thanlon kiku kili)
+array02=(`cat /etc/passwd`)
+array03=(`ls /var/ftp/Shell/for*`)
+array04=(thanlon kiku kili &quot;bash shell&quot;)
+</code></pre>
+
+<p>( 4 ) 数组的查看</p>
+<pre><code class="python"># 查看系统中声明过的数组
+thanlon@thanlon-master:~$ declare -a
+declare -a BASH_ARGC=([0]=&quot;0&quot;)
+declare -a BASH_ARGV=()
+declare -a BASH_COMPLETION_VERSINFO=([0]=&quot;2&quot; [1]=&quot;9&quot;)
+declare -a BASH_LINENO=()
+declare -ar BASH_REMATCH=()
+declare -a BASH_SOURCE=()
+declare -ar BASH_VERSINFO=([0]=&quot;5&quot; [1]=&quot;0&quot; [2]=&quot;3&quot; [3]=&quot;1&quot; [4]=&quot;release&quot; [5]=&quot;x86_64-pc-linux-gnu&quot;)
+declare -a DIRSTACK=()
+declare -a FUNCNAME
+declare -a GROUPS=()
+declare -a PIPESTATUS=([0]=&quot;0&quot;)
+</code></pre>
+
+<p>( 5 ) 访问数组元素</p>
+<pre><code class="js"># 查看自定义的数组
+echo ${array[0]} $ 访问数组中的第一个元素
+echo ${array[@]} $ 访问数组中的所有元素
+echo ${#array[@]} $ 统计数组中元素的个数
+echo ${!array[@]} $ 获取数组元素的索引
+echo ${array[@]:1} $ 从数组下标1开始
+echo ${array[@]:1:2} $ 从数组下标1开始访问两个元素
+</code></pre>
+
+<p>( 6 ) 遍历数组</p>
+<pre><code class="python"># 默认通过数组元素的个数进行遍历
+echo ${arr01[0]}
+echo ${arr01[1]}
+echo ${arr01[2]}
+</code></pre>
+
+<blockquote>
+<p>针对关联数组可以通过数组元素的索引值进行遍历。</p>
+</blockquote>
+<hr>
+
+<h5 id="19">19. 关联数组</h5>
+<p>关联数组可以允许用户自定义数组的索引，这样使用起来会更加方便。</p>
+<p>( 1 ) 定义关联数组</p>
+<pre><code class="python"># 申明关联数组变量
+thanlon@thanlon-master:~$ declare -A ass_array01
+</code></pre>
+
+<blockquote>
+<p>关联数组用大“A”参数申明，索引数组使用小“a”参数申明。</p>
+</blockquote>
+<p>( 2 ) 关联数组赋值</p>
+<p>一次赋一个值：</p>
+<pre><code class="python"># 数组名[索引]=变量名
+thanlon@thanlon-master:~$ declare -A ass_array01
+thanlon@thanlon-master:~$ ass_array01[name]=thanlon
+thanlon@thanlon-master:~$ ass_array01[age]=23
+thanlon@thanlon-master:~$ echo ${ass_array01[name]}
+thanlon
+thanlon@thanlon-master:~$ echo ${ass_array01[age]}
+23
+</code></pre>
+
+<p>一次赋多个值：</p>
+<pre><code class="python">thanlon@thanlon-master:~$ declare -A ass_array2
+thanlon@thanlon-master:~$ ass_array2=([name]=thanlon [age]=23)
+thanlon@thanlon-master:~$ echo ${ass_array2[name]}
+thanlon
+thanlon@thanlon-master:~$ echo ${ass_array2[age]}
+23
+</code></pre>
+
+<p>( 3 ) 查看数组</p>
+<pre><code class="python">thanlon@thanlon-master:~$ declare -A
+……
+declare -A ass_array01=([age]=&quot;23&quot; [name]=&quot;thanlon&quot; )
+declare -A ass_array2=([age]=&quot;23&quot; [name]=&quot;thanlon&quot; )
+</code></pre>
+
+<p>( 4 ) 访问数组元素</p>
+<pre><code class="js">echo ${ass_array[index]}    # 访问数组某个索引的值
+echo ${ass_array[@]}        # 访问数组中所有元素，等价于echo ${array[*]}
+echo ${#ass_array[@]}       # 获取数组的个数
+echo ${!ass_array[@]}       # 获取数组元素的索引
+</code></pre>
+
+<p>( 5 ) 遍历数组</p>
+<p>对于关联数组，<font>需要通过数组元素的索引值进行遍历，不能通过数组元素的编号进行遍历</font>：</p>
+<pre><code class="python">thanlon@thanlon-master:~$ echo ${ass_array2[name]}
+thanlon
+thanlon@thanlon-master:~$ echo ${ass_array2[age]}
+23
+</code></pre>
+
+<hr>
+
+<h5 id="20">20. 职员信息查询系统</h5>
+<p><kbd>employee_info.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/12 12:37
+for((i=0;i&lt;3;i++))
+        do
+                read -p &quot;输入第$((i+1))个职员的人名：&quot; employee_name[$i]
+                read -p &quot;输入第$[$i+1]个的职员年龄：&quot; employee_age[$i]
+                read -p &quot;输入第`expr $i + 1`个职员的性别：&quot; employee_gender[$i]
+                echo
+done
+clear
+echo -e &quot;\t\t\t\t职员信息查询系统&quot;
+echo &quot;友情提示：输入Q可以直接退出系统！&quot;
+while :
+        do
+                read -p &quot;输入要查询的职员的姓名：&quot; name
+                [ $name == &quot;Q&quot; ]&amp;&amp; exit
+                flag=0
+                for((i=0;i&lt;3;i++))
+                        do
+                                if [ &quot;$name&quot; == &quot;${employee_name[$i]}&quot; ];then
+                                        echo &quot;职员姓名：${employee_name[$i]} 职员年龄：${employee_age[$i]} 职员性别：${employee_gender[$i]}&quot;
+                                        flag=1
+                                fi
+                done
+                [ $flag -eq 0 ]&amp;&amp;echo &quot;抱歉，没有找到该职员！&quot;
+                echo
+done
+</code></pre>
+
+<p><code>执行过程</code>：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200412134830817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200412134928175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="21">21. 数学比较运算</h5>
+<pre><code class="bash">-eq # 等于
+-ge # 大于等于
+-gt # 大于
+-le # 小于等于
+-lt # 小于
+-le # 不等于
+</code></pre>
+
+<p>你可以使用 <kbd>man test</kbd> 命令查看：</p>
+<pre><code class="python">……
+       INTEGER1 -eq INTEGER2
+              INTEGER1 is equal to INTEGER2
+
+       INTEGER1 -ge INTEGER2
+              INTEGER1 is greater than or equal to INTEGER2
+
+       INTEGER1 -gt INTEGER2
+              INTEGER1 is greater than INTEGER2
+
+       INTEGER1 -le INTEGER2
+              INTEGER1 is less than or equal to INTEGER2
+
+       INTEGER1 -lt INTEGER2
+              INTEGER1 is less than INTEGER2
+
+       INTEGER1 -ne INTEGER2
+              INTEGER1 is not equal to INTEGER2
+……
+</code></pre>
+
+<p><font>test</font> 命令结合数学比较运算的简单使用1：</p>
+<pre><code class="python"># 如果上一条命令执行成功，返回真就是0，
+# test命令只会做判断，不会打印结果，我们需要使用组合命令
+thanlon@thanlon-master:~$ test 1 -eq 1;echo $?
+0
+thanlon@thanlon-master:~$ test 1 -ge 1;echo $?
+0
+thanlon@thanlon-master:~$ test 1 -le 1;echo $?
+0
+thanlon@thanlon-master:~$ test 1 -lt 1;echo $?
+1
+thanlon@thanlon-master:~$ test 1 -gt 1;echo $?
+1
+thanlon@thanlon-master:~$ test 1 -ne 1;echo $?
+1
+thanlon@thanlon-master:~$ echo &quot;1.5*10&quot;
+1.5*10
+thanlon@thanlon-master:~$ echo &quot;1.5*10&quot;|bc
+15.0
+thanlon@thanlon-master:~$ echo &quot;1.5*10&quot;|bc
+15.0
+# 15.0以小数点分割，取小数点前面的数，使用f1
+thanlon@thanlon-master:~$ echo &quot;1.5*10&quot;|bc|cut -d '.' -f1
+15
+# 15.0以小数点分割，取小数点后的数，使用f2
+thanlon@thanlon-master:~$ echo &quot;1.5*10&quot;|bc|cut -d '.' -f2
+0
+thanlon@thanlon-master:~$ test `echo &quot;1.5*10&quot;|bc|cut -d '.' -f2` -eq 20;echo $?
+1
+thanlon@thanlon-master:~$ test `echo &quot;1.5*10&quot;|bc|cut -d '.' -f2` -eq $((2*10));echo $?
+1
+</code></pre>
+
+<p><font>test</font> 命令结合数学比较运算的简单使用2：</p>
+<p><kbd>float.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/13 21:20
+num01=`echo &quot;1.5*10&quot;|bc|cut -d &quot;.&quot; -f1`
+num02=$((2*10))
+
+test $num01 -ge $num02;echo $?
+</code></pre>
+
+<p><code>执行过程：</code></p>
+<pre><code class="python">thanlon@thanlon-master: $ bash float.sh 
+1
+# -x是查看debug的过程
+thanlon@thanlon-master: $ bash -x float.sh 
+++ echo '1.5*10'
+++ bc
+++ cut -d . -f1
++ num01=15
++ num02=20
++ test 15 -ge 20
++ echo 1
+1
+</code></pre>
+
+<blockquote>
+<p><font>数学运算比较的是整型的数据!</font></p>
+</blockquote>
+<hr>
+
+<h5 id="22">22. 文件比较运算</h5>
+<p>相关参数：</p>
+<p>| -d | -e | -f | -r | -s | -w | -x | -O | -G | file1 -nt file2 | file1 -ot file2 |
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| 检查文件是否存在且为目录 | 检查文件是否存在 | 检查文件是否存在且为文件 | 检查文件是否存且可读 | 检查文件是否存在且不为空 |  检查文件是否存在且可写| 检查文件是否存在且可执行 | 检查文件是否存在且被当前用户拥有 | 检查文件是否存在且默认组为当前用户组 | 检查file1是否比file2新 | 检查file1是否比file2旧 |</p>
+<p>应用举例：</p>
+<pre><code class="python"># 检查文件是否存在且为目录
+thanlon@thanlon-master:~$ test -d /tmp/dir1;echo $?
+1
+thanlon@thanlon-master:~$ mkdir /tmp/dir1
+thanlon@thanlon-master:~$ test -d /tmp/dir1;echo $?
+0
+# 检查文件是否存在
+thanlon@thanlon-master:~$ test -e /tmp/dir1/;echo $?
+0
+thanlon@thanlon-master:~$ touch /tmp/file
+thanlon@thanlon-master:~$ test -e /tmp/file;echo $?
+0
+# 检查文件是否存在且为文件
+thanlon@thanlon-master:~$ test -f /tmp/dir1;echo $?
+1
+thanlon@thanlon-master:~$ test -f /tmp/file;echo $?
+0
+# 检查文件是否存且可读
+thanlon@thanlon-master:~$ test -r /tmp/dir1;echo $?
+0
+thanlon@thanlon-master:~$ test -r /tmp/file;echo $?
+0
+# 检查文件是否存在且不为空
+thanlon@thanlon-master:~$ test -s /tmp/dir1;echo $?
+0
+thanlon@thanlon-master:~$ test -s /tmp/file;echo $?
+1
+thanlon@thanlon-master:~$ echo &quot;thanlon&quot;&gt; /tmp/file
+thanlon@thanlon-master:~$ test -s /tmp/file;echo $?
+0
+# 检查文件是否存在且可写
+thanlon@thanlon-master:~$ test -w /tmp/file;echo $?
+0
+thanlon@thanlon-master:~$ test -w /tmp/dir1/;echo $?
+0
+# 检查文件是否存在且可执行
+thanlon@thanlon-master:~$ test -x /tmp/dir1/;echo $?
+0
+thanlon@thanlon-master:~$ test -x /tmp/file;echo $?
+1
+thanlon@thanlon-master:~$ chmod +x /tmp/file 
+thanlon@thanlon-master:~$ test -x /tmp/file;echo $?
+0
+# 检查文件是否存在且被当前用户拥有
+thanlon@thanlon-master:~$ test -O /tmp/file;echo $?
+0
+thanlon@thanlon-master:~$ test -O /tmp/dir1/;echo $?
+0
+# 检查文件是否存在且默认组为当前用户组
+thanlon@thanlon-master:~$ test -G /tmp/file;echo $?
+0
+thanlon@thanlon-master:~$ test -G /tmp/dir1/;echo $?
+0
+# 检查file1是否比file2新
+thanlon@thanlon-master:~$ mkdir /tmp/dir1
+thanlon@thanlon-master:~$ mkdir /tmp/dir2
+thanlon@thanlon-master:~$ stat /tmp/dir1/
+  文件：/tmp/dir1/
+  大小：4096       块：8          IO 块：4096   目录
+设备：10300h/66304d    Inode：67          硬链接：2
+权限：(0755/drwxr-xr-x)  Uid：( 1000/ thanlon)   Gid：( 1000/ thanlon)
+最近访问：2020-04-18 11:29:23.380465106 +0800
+最近更改：2020-04-18 11:29:23.380465106 +0800
+最近改动：2020-04-18 11:29:23.380465106 +0800
+创建时间：-
+thanlon@thanlon-master:~$ stat /tmp/dir2/
+  文件：/tmp/dir2/
+  大小：4096       块：8          IO 块：4096   目录
+设备：10300h/66304d    Inode：69          硬链接：2
+权限：(0755/drwxr-xr-x)  Uid：( 1000/ thanlon)   Gid：( 1000/ thanlon)
+最近访问：2020-04-18 11:29:24.964488303 +0800
+最近更改：2020-04-18 11:29:24.964488303 +0800
+最近改动：2020-04-18 11:29:24.964488303 +0800
+创建时间：-
+thanlon@thanlon-master:~$ test /tmp/dir1/ -nt /tmp/dir2/;echo $?
+1
+thanlon@thanlon-master:~$ test /tmp/dir2/ -nt /tmp/dir1/;echo $?
+0
+thanlon@thanlon-master:~$ touch /tmp/file1
+thanlon@thanlon-master:~$ touch /tmp/file2
+thanlon@thanlon-master:~$ stat /tmp/file1
+  文件：/tmp/file1
+  大小：0          块：0          IO 块：4096   普通空文件
+设备：10300h/66304d    Inode：70          硬链接：1
+权限：(0644/-rw-r--r--)  Uid：( 1000/ thanlon)   Gid：( 1000/ thanlon)
+最近访问：2020-04-18 11:31:07.855343191 +0800
+最近更改：2020-04-18 11:31:07.855343191 +0800
+最近改动：2020-04-18 11:31:07.855343191 +0800
+创建时间：-
+thanlon@thanlon-master:~$ stat /tmp/file2
+  文件：/tmp/file2
+  大小：0          块：0          IO 块：4096   普通空文件
+设备：10300h/66304d    Inode：71          硬链接：1
+权限：(0644/-rw-r--r--)  Uid：( 1000/ thanlon)   Gid：( 1000/ thanlon)
+最近访问：2020-04-18 11:31:11.135472107 +0800
+最近更改：2020-04-18 11:31:11.135472107 +0800
+最近改动：2020-04-18 11:31:11.135472107 +0800
+创建时间：-
+thanlon@thanlon-master:~$ test /tmp/file1 -nt /tmp/file2;echo $?
+1
+thanlon@thanlon-master:~$ test /tmp/file2 -nt /tmp/file1;echo $?
+0
+# 检查file1是否比file2旧
+thanlon@thanlon-master:~$ test /tmp/file1 -ot /tmp/file2;echo $?
+0
+thanlon@thanlon-master:~$ test /tmp/file2 -ot /tmp/file1;echo $?
+1
+thanlon@thanlon-master:~$ test /tmp/dir1/ -ot /tmp/dir2/;echo $?
+0
+thanlon@thanlon-master:~$ test /tmp/dir2/ -ot /tmp/dir1/;echo $?
+1
+# 检查两个文件是否是同一个文件
+thanlon@thanlon-master:~$ touch 1.txt 
+thanlon@thanlon-master:~$ cp 1.txt /tmp/
+thanlon@thanlon-master:~$ test 1.txt -ef /tmp/1.txt ;echo $?
+1
+# 只有具有相同i节点的才是同一个文件，也就是硬连接，
+thanlon@thanlon-master:~$ echo&gt;1.sh
+thanlon@thanlon-master:~$ ln 1.sh xxx
+thanlon@thanlon-master:~$ ls -il 1.sh xxx 
+139968 -rw-r--r-- 2 thanlon thanlon 1 4月  18 11:44 1.sh
+139968 -rw-r--r-- 2 thanlon thanlon 1 4月  18 11:44 xxx
+thanlon@thanlon-master:~$ test 1.sh -ef xxx ;echo $?
+0
+</code></pre>
+
+<blockquote>
+<p>注意：新旧比较的是文件的最近更改时间，只有相同i节点的文件才是同一个文件。</p>
+</blockquote>
+<hr>
+
+<h5 id="23">23. 字符串比较运算</h5>
+<p>字符串参数解释：</p>
+<table>
+<thead>
+<tr>
+<th>==</th>
+<th>!=</th>
+<th>-n</th>
+<th>-z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等于</td>
+<td>不等于</td>
+<td>检查字符串长度是否大于0</td>
+<td>检查字符串长度是否为0</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python"># 比较字符串是否相等
+thanlon@thanlon-master:~$ test $USER == &quot;root&quot;;echo $?
+1
+thanlon@thanlon-master:~$ test $USER == &quot;thanlon&quot;;echo $?
+0
+# 比较字符串是否不相等
+thanlon@thanlon-master:~$ test $USER != &quot;root&quot;;echo $?
+0
+thanlon@thanlon-master:~$ test $USER != &quot;thanlon&quot;;echo $?
+1
+# 字符串是否不为空/字符串长度大于0
+thanlon@thanlon-master:~$ test -n &quot;&quot;;echo $?
+1
+thanlon@thanlon-master:~$ test -n &quot;hahah&quot;;echo $?
+0
+thanlon@thanlon-master:~$ abc=1024
+thanlon@thanlon-master:~$ echo &quot;$abc&quot;
+1024
+thanlon@thanlon-master:~$ test -n &quot;$abc&quot;;echo $?
+0
+# 字符串是否为空/字符串长度是否为0
+thanlon@thanlon-master:~$ test -z &quot;&quot;;echo $?
+0
+thanlon@thanlon-master:~$ test -z &quot;hahaha&quot;;echo $?
+1
+thanlon@thanlon-master:~$ abc=1024
+thanlon@thanlon-master:~$ echo &quot;$abc&quot;
+1024
+thanlon@thanlon-master:~$ test -z &quot;$abc&quot;;echo $?
+1
+</code></pre>
+
+<blockquote>
+<p>运算符前后各有一个空格。</p>
+</blockquote>
+<hr>
+
+<h5 id="24">24. 逻辑运算</h5>
+<p>逻辑运算参数解释：</p>
+<table>
+<thead>
+<tr>
+<th>&amp;&amp;</th>
+<th>||</th>
+<th>!</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逻辑与运算</td>
+<td>逻辑或运算</td>
+<td>逻辑非运算</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>逻辑与运算、或运算有两个或两个以上的运算，但是逻辑非只有一个运算。</p>
+<p>逻辑与运算：只有条件都为真，结果为真，有一个为假，结果为假。</p>
+<p>逻辑与运算：只要有一个为真，结果为真。</p>
+<p>逻辑非运算：非真即假，非假即真</p>
+</blockquote>
+<pre><code class="python">$ if [ 1 -eq 1 ] &amp;&amp; [ 2 -eq 2 ];then echo '真';else echo &quot;假&quot;;fi 
+真
+$ if [ 1 -eq 1 ] &amp;&amp; [ 2 -eq 3 ];then echo '真';else echo &quot;假&quot;;fi 
+假
+$ if [ 1 -eq 1 ] || [ 2 -eq 3 ];then echo '真';else echo &quot;假&quot;;fi 
+真
+$ if [ 1 -eq 2 ] || [ 2 -eq 3 ];then echo '真';else echo &quot;假&quot;;fi 
+假
+</code></pre>
+
+<hr>
+
+<h5 id="25">25. 赋值运算</h5>
+<pre><code class="python">$ echo $flag
+1
+</code></pre>
+
+<blockquote>
+<p><strong><code>= 即表示赋值运算。</code></strong></p>
+</blockquote>
+<hr>
+
+<h5 id="26">26. 特殊变量</h5>
+<p>| $* |$# | $$ | $_ | $N | $0|
+|--|--|--|--|--|--|--|--|--|
+| 脚本的参数| 参数的数量 |脚本执的PID  | 最后执行的命令| 第一个外传参数|脚本的名字|</p>
+<p><kbd>special_variable.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 11:42
+
+echo &quot;脚本的参数：$*&quot;
+echo &quot;参数的数量：$#&quot;
+echo &quot;脚本执的PID：$$&quot;
+echo &quot;最后执行的命令：$_&quot;
+echo &quot;第一个外传参数：$1&quot;
+echo &quot;脚本的名字：$0&quot;
+</code></pre>
+
+<pre><code class="python">$ bash special_variable.sh thanlon kiku kili
+脚本的参数：thanlon kiku kili
+参数的数量：3
+脚本执的PID：23523
+最后执行的命令：脚本执的PID：23523
+第一个外传参数：thanlon
+脚本的名字：special_variable.sh
+</code></pre>
+
+<hr>
+
+<h5 id="27-if">27. 单 if 语句</h5>
+<p>使用范围是只需要一步判断，单if语句的格式：</p>
+<pre><code class="bash">if [ condition ]        #conditon的值为true或者false
+    then
+        commands
+fi
+</code></pre>
+
+<p><kbd>if_demo1.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 19:38
+
+if [ $USER != &quot;root&quot; ]
+    then
+        echo &quot;ERROR：need to be root so that&quot;
+        exit 1
+fi
+</code></pre>
+
+<blockquote>
+<p>条件和[]是有空格的，运算符两边也是有空格的。</p>
+</blockquote>
+<pre><code class="python">$ bash if_demo1.sh 
+ERROR：need to be root so that
+</code></pre>
+
+<hr>
+
+<h5 id="28-if-then-else">28. if-then-else</h5>
+<p>使用与两步判断，条件为真执行什么和条件为假执行什么。if-then-else 的格式：</p>
+<pre><code class="bash">if [ conditon ]
+    then
+        commands1
+else
+        commands2
+fi
+</code></pre>
+
+<p>判断当前用户是否是管理员还是普通用户，如果是管理员输出 “Hello Adminisrator!”，如果是普通用户输出 “Hello Guest!”：</p>
+<p><kbd>if_demo2.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 20:10
+
+if [ $USER == &quot;root&quot; ]
+    then
+        echo &quot;Hello Adminisrator!&quot;
+else
+        echo &quot;Hello Guest!&quot;
+fi
+</code></pre>
+
+<pre><code class="python">thanlon@thanlon-master:~$ su - root -c &quot;/usr/bin/bash /home/thanlon/工程/ShellProjects/if_demo2.sh&quot;
+密码： 
+Hello Adminisrator!
+thanlon@thanlon-master:~$ su - thanlon -c &quot;/usr/bin/bash /home/thanlon/工程/ShellProjects/if_demo2.sh&quot;
+密码： 
+Hello Guest!
+</code></pre>
+
+<p><kbd>num_compare.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 20:41
+
+if [ $1 -gt $2 ]
+    then
+        echo &quot;$1&gt;$2&quot;
+elif [ $1 -lt $2 ]
+    then
+        echo &quot;$1&lt;$2&quot;
+else
+        echo &quot;$1=$2&quot;
+fi
+</code></pre>
+
+<pre><code class="shell">thanlon@thanlon-master:~$ bash num_compare.sh 1 2
+1&lt;2
+thanlon@thanlon-master:~$ bash num_compare.sh 2 1
+2&gt;1
+thanlon@thanlon-master:~$ bash num_compare.sh 1 1
+1=1
+</code></pre>
+
+<h5 id="29-if">29. if 高级应用</h5>
+<p>条件括号使用双圆括号，可以在条件中植入数学表达式：
+<kbd>num_compare.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 20:41
+
+if (($1&gt;$2))
+    then
+        echo &quot;$1&gt;$2&quot;
+elif (($1&lt;$2))
+    then
+        echo &quot;$1&lt;$2&quot;
+else
+        echo &quot;$1=$2&quot;
+fi
+</code></pre>
+
+<pre><code class="shell">thanlon@thanlon-master:~$ bash num_compare.sh 1 2
+1&lt;2
+thanlon@thanlon-master:~$ bash num_compare.sh 2 1
+2&gt;1
+thanlon@thanlon-master:~$ bash num_compare.sh 1 1
+1=1
+</code></pre>
+
+<p><font>使用双方括号可以在条件中使用通配符</font>，下面例子是匹配 r* 开头的字符串：</p>
+<p><font>square_brackets.sh</font>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 20:56
+
+for var in aa bb cc dd rr rx
+    do
+        if [[ &quot;$var&quot; == r* ]]
+            then
+                echo &quot;$var&quot;
+        fi
+done
+</code></pre>
+
+<pre><code class="bash">thanlon@thanlon-master:~$ bash square_brackets.sh
+rr
+rx
+</code></pre>
+
+<h5 id="30-for">30. for 循环介绍</h5>
+<p>脚本在执行任务的时候，总是会遇到循环执行的时候，比如说我们需要脚本每隔一段时间执行一次ping操作。除了计划任务可以实现，还可以使用脚本来完成，需要用到循环语句。for循环叫做条件循环，for循环的次数和给予的条件是成正比的。</p>
+<blockquote>
+<p>在完成同一个任务时，使用循环可以节省内存；并且使用循环是程序结构更清晰；</p>
+</blockquote>
+<hr>
+
+<h5 id="31-for">31. for 循环语法</h5>
+<p>( 1 ) 语法一</p>
+<pre><code class="bash">for var in value1 value2 value3……
+    do
+        commands
+done
+</code></pre>
+
+<p>循环输出1~9个数字：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 22:10
+
+for i in `seq 1 9` # 使用命令赋值
+    do
+        echo $i
+done
+</code></pre>
+
+<pre><code class="python">thanlon@thanlon-master:~$ bash for_demo01.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre>
+
+<blockquote>
+<p>seq 1 9 是命令赋值，for var in 1 2 3 4 是直接赋值。还可以赋予字符串，如 for var in thanlon\'s bag, kili\'s bag</p>
+</blockquote>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 22:18
+
+for var in thanlon\'s is cool,
+    do
+        echo $var
+done
+</code></pre>
+
+<pre><code class="python">thanlon@thanlon-master:~$ bash for_demo02.sh 
+thanlon's
+is
+cool,
+</code></pre>
+
+<p>( 2 ) 语法二</p>
+<pre><code class="bash">for ((变量;条件;自增减运算))
+    do
+        代码块
+done 
+</code></pre>
+
+<p>循环输出 1~9 个数字：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 22:10
+
+# C格式语法
+for((i=0;i&lt;10;i++))
+    do
+        echo $i
+done
+</code></pre>
+
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 22:18
+
+# 多变量的C格式语法
+for((a=0,b=9;a&lt;10;a++,b--)) #a++=a+1,b--=b-1
+    do
+        echo $a $b
+done
+</code></pre>
+
+<pre><code class="python">thanlon@thanlon-master:~$ bash for_demo02.sh 
+0 9
+1 8
+2 7
+3 6
+4 5
+5 4
+6 3
+7 2
+8 1
+9 0
+</code></pre>
+
+<blockquote>
+<p>使用((;;))条件可以实现无限循环。</p>
+</blockquote>
+<p>编写一个无线循环的脚本：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 00:54
+
+for((;;))
+    do
+        echo &quot;Hello World!&quot;
+done
+</code></pre>
+
+<hr>
+
+<h5 id="32">32. 循环控制语句</h5>
+<p>( 1 ) sleep n：脚本执行到某一步休眠n秒</p>
+<p><kbd>sleep.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：监控主机存活的脚本
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 17:01
+
+for((;;))
+    do
+        ping -c1 $1 &amp;&gt;/dev/null
+        if [ $? -eq 0 ]
+            then
+                echo -e &quot;`date +&quot;%F %H:%M:%S&quot;`:$1 is\033[32m up\033[0m.&quot;
+        else
+                echo -e &quot;`date +&quot;%F %H:%M:%S&quot;`:$1 is\033[32m down\033[0m.&quot;
+        fi
+        #生产环境建议1分钟及以上
+        sleep 2
+done
+</code></pre>
+
+<p><code>执行记录</code>：</p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash sleep.sh 47.102.145.225
+2020-04-20 17:18:40:47.102.145.225 is up.
+2020-04-20 17:18:42:47.102.145.225 is up.
+2020-04-20 17:18:44:47.102.145.225 is up.
+</code></pre>
+
+<pre><code class="python">thanlon@thanlon-master:~$ bash sleep.sh 47.102.145.200
+2020-04-20 17:19:24:47.102.145.200 is down.
+2020-04-20 17:19:36:47.102.145.200 is down.
+2020-04-20 17:19:48:47.102.145.200 is down.
+</code></pre>
+
+<blockquote>
+<p>ping 命令的过程如果不想看到，可以使用 &amp;&gt;/dev/null，将标准输出和错误输出都输入到/dev/null，而不显示在控制台上。-c 1或者-c1是限制ping的次数。-w 5或-w5是限制ping的时间。</p>
+</blockquote>
+<p>( 2 ) continue：跳过循环中的某次循环（跳过本次循环）</p>
+<p><kbd>continue.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：continue的简单使用
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 17:41
+
+for((i=0;i&lt;10;i++))
+    do
+        if [ $i == 2 ];then
+            # 本次循环结束，直接进入下一个循环
+            continue
+        fi
+        echo $i
+        sleep 1
+done
+</code></pre>
+
+<p><code>执行过程：</code></p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash continue.sh 
+0
+1
+3
+4
+5
+6
+7
+8
+9
+</code></pre>
+
+<p>( 3 ) break：跳出循环执行后续代码</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：break用法示例1
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 17:47
+
+for((;;))
+    do
+        read -p &quot;请输入字符：&quot; ch
+        if [ $ch == &quot;Q&quot; ]||[ $ch == &quot;q&quot; ] # ||两边不加空格也是可以的
+            then
+                break
+        else
+                echo &quot;您输入的字符是：$ch&quot;
+        fi
+done
+</code></pre>
+
+<p><code>执行过程：</code></p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash break.sh 
+请输入字符：a
+您输入的字符是：a
+请输入字符：b
+您输入的字符是：b
+请输入字符：c
+您输入的字符是：c
+请输入字符：q
+</code></pre>
+
+<pre><code class="bash">#!/usr/bin/bash
+#Description：break用法示例2
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 17:47
+
+for((i=0;i&lt;10;i++))
+    do
+        for((;;))
+            do
+                echo &quot;Hello thanlon!&quot;
+                break     # 跳过本层循环
+                #break 1   # 等价于break,跳过本次循环
+                #break 2   # 跳过上一层(从内到外第二层)循环
+        done
+        echo $i
+        sleep 1
+done
+</code></pre>
+
+<p><code>执行过程</code>：</p>
+<pre><code class="shell">thanlon@thanlon-master:~$ bash break.sh 
+Hello thanlon!
+0
+Hello thanlon!
+1
+Hello thanlon!
+2
+Hello thanlon!
+3
+</code></pre>
+
+<p>( 1 ) 扫描网段中哪些机器是存活的。</p>
+<p>( 2 ) 手动写一个同步拉脚本，要求B机器每隔10分钟把A机器的/opt/cache下的内容拉取到B机器的/opt/cache下，并做完整性验证。</p>
+<p>( 3 ) 新建user01、user02用户，要求密码是随机6位数，密码取值范围a~z、A～Z、0~9，要求密码不能只是单一的数字或小写或大写字母。</p>
+<p>( 4 ) 写一个mysql分库备份脚本</p>
+<p>( 5 ) 写一个猜数字脚本，数字范围是1~100，定制计数器，每次才玩都要告诉用户猜大或猜小，如果猜对了跳出脚本并输出计数器的值。</p>
+<p>( 6 ) 为DNS写一个自动判断WEB解析的脚本。公司DNS将域名www.thanlon.cn解析到两个web服务器，以实现DNS负载均衡。但是当某个web服务器出现故障，那么DNS依然会将用户解析到宕机WEB，造成不能正常访问。所以要求写一个运行在DNS的检查脚本。当发现哪台WEB宕机后，自己修改DNS的解析记录，关闭对其的解析。当Web恢复，DNS在打开对其的解析并恢复解析。</p>
+<p>( 7 ) 写一个九九乘法表。
+<hr></p>
+<h5 id="33-while">33. while循环介绍</h5>
+<p>while 和 for一样都是 shell 中负责循环的语句。for是条件循环，是根据条件的个数来决定循环的个数。<font>当我们明确知道循环次数，使用 for。如果不知道循环多少次，使用 while</font>。 
+<hr></p>
+<h5 id="34-while">34. while循环语法</h5>
+<pre><code class="shell">while [ condition ]
+do
+    代码块
+done
+</code></pre>
+
+<hr>
+
+<h5 id="35-while">35. while循环案例</h5>
+<p><kbd>while_demo01.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 22:32
+
+read -p &quot;money：&quot; money
+read -p &quot;car_num：&quot; car_num
+read -p &quot;house_num&quot; house_num
+while [ $money -lt 100000 ]||[ $car -lt 1 ]||[ $house_num -lt 1 ]
+    do
+        echo &quot;不满足条件！&quot;
+        read -p &quot;money：&quot; money
+        read -p &quot;car_num：&quot; car_num
+        read -p &quot;house_num&quot; house_num
+done
+echo &quot;满足条件！&quot;
+</code></pre>
+
+<p><strong><code>执行过程</code></strong>：</p>
+<pre><code class="shell">thanlon@thanlon-master:~$ bash while_demo01.sh 
+money：100000
+car_num：1
+house_num1
+满足条件！
+thanlon@thanlon-master:~$ bash while_demo01.sh 
+money：100000
+car_num：0
+house_num1
+不满足条件！
+money：100000
+car_num：1
+house_num0
+不满足条件！
+money：100000
+car_num：1
+house_num1
+满足条件！
+thanlon@thanlon-master:~$ 
+</code></pre>
+
+<p><kbd>while_demo02.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 22:36
+
+read -p &quot;Account: &quot; account
+while [ $account != &quot;root&quot; ]
+do
+    read -p &quot;Account: &quot; account
+done
+</code></pre>
+
+<p><strong><code>执行过程：</code></strong></p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash while_demo02.sh 
+Account: thanlon
+Account: kili
+Account: root
+</code></pre>
+
+<p><kbd>while_demo03.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 22:48
+
+while [ ! -d /tmp/thanlon/ ]
+do
+    echo &quot;not found /tmp/thanlon/&quot;
+    sleep 2
+done
+</code></pre>
+
+<p><strong><code>执行过程：</code></strong></p>
+<pre><code class="python">控制台1：
+# 控制台2中创建了目录后，脚本执行结束
+thanlon@thanlon-master:~$ bash while_demo03.sh
+not found /tmp/thanlon/
+not found /tmp/thanlon/
+not found /tmp/thanlon/
+not found /tmp/thanlon/
+控制台2：
+thanlon@thanlon-master:~$ mkdir /tmp/thanlon/
+</code></pre>
+
+<h5 id="36-while">36. while循环控制与语句嵌套</h5>
+<p><kbd>while_demo01.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：当i的值为5的时候，停止本循环
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/21 12:53
+
+i=1
+while [ $i -lt 10 ];do
+    echo $i
+    if [ $i -eq 5 ];then
+        break
+    fi
+    i=$((i+1))
+done
+</code></pre>
+
+<p><strong><code>执行过程：</code></strong></p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash while_demo01.sh 
+1
+2
+3
+4
+5
+</code></pre>
+
+<p><kbd>while_demo01.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/21 13:03
+
+i=0
+while [ $i -lt 10 ];do
+        i=$((i+1))
+        if [ $i -eq 5 ];then
+            continue
+        fi
+        echo $i
+done
+</code></pre>
+
+<p><strong><code>执行过程：</code></strong></p>
+<pre><code class="shell">thanlon@thanlon-master:~$ bash while_demo02.sh 
+1
+2
+3
+4
+6
+7
+8
+9
+10
+</code></pre>
+
+<blockquote>
+<p>如果代码暂时不用了，可以把把它放到函数中！</p>
+</blockquote>
+<p><kbd>九九乘法表的实现</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：while实现九九乘法表
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/21 14:19
+i=1
+while [ $i -lt 10 ];do
+        j=1
+        while [ $j -lt $((i+1)) ];do
+            echo -n &quot;$j*$i=$((i*j)) &quot;
+            j=$((j+1))
+        done
+    i=$((i+1))
+    echo
+done
+</code></pre>
+
+<pre><code class="bash">#!/usr/bin/bash
+#Description：使用for实现九九乘法表
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/21 14:19
+for((i=1;i&lt;10;i++));do
+    for((j=1;j&lt;i+1;j++));do
+            echo -n &quot;$j*$i=$((i*j)) &quot;    
+    done
+    echo
+done
+</code></pre>
+
+<p><strong><code>执行过程</code></strong>：</p>
+<pre><code class="python">1*1=1  
+1*2=2 2*2=4 
+1*3=3 2*3=6 3*3=9 
+1*4=4 2*4=8 3*4=12 4*4=16 
+1*5=5 2*5=10 3*5=15 4*5=20 5*5=25 
+1*6=6 2*6=12 3*6=18 4*6=24 5*6=30 6*6=36 
+1*7=7 2*7=14 3*7=21 4*7=28 5*7=35 6*7=42 7*7=49 
+1*8=8 2*8=16 3*8=24 4*8=32 5*8=40 6*8=48 7*8=56 8*8=64 
+1*9=9 2*9=18 3*9=27 4*9=36 5*9=45 6*9=54 7*9=63 8*9=72 9*9=81
+</code></pre>
+
+<p><kbd>使用while遍历文件内容</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/21 18:47
+
+while read i #读取$1文件，一行一行地赋值给i
+    do
+        echo &quot;$i&quot; #一行一行地输出
+done &lt; $1
+</code></pre>
+
+<p><strong><code>执行过程：</code></strong></p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash while_file.sh /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+……
+</code></pre>
+
+<p><kbd>使用while遍历文件内容，打印列</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/21 18:57
+
+#IFS指定默认的列分隔符
+IFS=$&quot;:&quot;
+while read f1 f2 f3 f4
+    do
+        echo &quot;$f1 $f2 $f3&quot;
+done &lt; /etc/passwd
+</code></pre>
+
+<p><strong><code>执行过程：</code></strong></p>
+<pre><code class="python">thanlon@thanlon-master:~$ bash while_file2.sh
+root x 0
+daemon x 1
+bin x 2
+sys x 3
+sync x 4
+games x 5
+……
+</code></pre>
+
+<blockquote>
+<p>IFS 指定默认的列分隔符!</p>
+</blockquote>
+<hr>
+
+<h5 id="37-until">37. until循环介绍</h5>
+<p>简而言之，until与while相反。until是当条件为假的时候才执行，条件为真则停止执行。
+<hr></p>
+<h5 id="38-until">38. until语法</h5>
+<pre><code class="bash">until [ condition ] # 注意条件为假until才会循环，条件为真，until停止循环
+do
+    代码块
+done
+</code></pre>
+
+<hr>
+
+<h5 id="39-until">39. until案例</h5>
+<p><kbd>until01.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：until案例1
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 18:59
+
+num=10
+until [ $num -gt 20 ];do
+    echo $num
+    num=$((num+1))
+    sleep 0.5
+done
+</code></pre>
+
+<p><code>执行过程:</code></p>
+<pre><code class="shell">thanlon@thanlon-master:~$ bash until01.sh 
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</code></pre>
+
+<p><kbd>until02.sh</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：while与until综合应用，数字接龙
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/20 18:59
+
+num=1
+while [ $num -lt 5 ];do
+    echo $num
+    sleep 0.1
+    num=$((num+1))
+    until [ $num -lt 5 ];do
+        echo $num
+        sleep 0.1
+        if [ $num -eq 9 ];then
+            break
+        fi
+        num=$((num+1))
+    done
+done
+</code></pre>
+
+<p><strong><code>执行过程:</code></strong></p>
+<pre><code class="shell">thanlon@thanlon-master:~$ bash until02.sh 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre>
+
+<hr>
+
+<h5 id="40-case">40. case介绍</h5>
+<p>case 语句是多条件分之语句。在生产环境中，我们会遇到一个问题需要根据不同的情况来执行不同的预案，那么我们要处理这些问题就要首先根据可能出现的情况写出对应的预案，根据出现的情况来加载不同的预案。实际中也有这样的例子，<strong><code>如监控内存的使用率</code></strong>。
+<hr></p>
+<h5 id="41-case">41. case语法</h5>
+<pre><code class="bash">case 变量 in
+条件1)
+            执行代码块1
+;;
+条件2)
+            执行代码块2
+;;
+……
+esac
+</code></pre>
+
+<blockquote>
+<p>每个代码块执行结束要以;;结尾代表结束。case结尾要以反转的esac来结束。</p>
+</blockquote>
+<p>相关案例：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 13:36
+
+read -p &quot;请输入您要查找的职工姓名：&quot; N
+case $N in
+Thanlon)
+    echo &quot;1.姓名：Thanlon&quot;
+    echo &quot;2.性别：男&quot;
+    echo &quot;3.年龄：23&quot;
+;;
+Kili)
+    echo &quot;1.姓名：Kili&quot;
+    echo &quot;2.性别：女&quot;
+    echo &quot;3.年龄：21&quot;
+;;
+Kiku)
+    echo &quot;1.姓名：Kiku&quot;
+    echo &quot;2.性别：女&quot;
+    echo &quot;3.年龄：24&quot; 
+;;
+esac
+</code></pre>
+
+<pre><code class="python">thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh 
+请输入您要查找的职工姓名：Thanlon
+1.姓名：Thanlon
+2.性别：男
+3.年龄：23
+thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh 
+请输入您要查找的职工姓名：Kili
+1.姓名：Kili
+2.性别：女
+3.年龄：21
+thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh 
+请输入您要查找的职工姓名：Kiku
+1.姓名：Kiku
+2.性别：女
+3.年龄：24
+</code></pre>
+
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 14:02
+
+case $1 in
+nn|NN)
+    echo &quot;奶奶好！&quot;
+;;
+lzr|LZR)
+    echo &quot;伯父好！&quot;
+;;
+zmn|ZMN)
+    echo &quot;伯母好！&quot;
+;;
+*)
+    echo &quot;USAGE：$0 nn|lzr|zmn&quot;
+;;
+esac
+</code></pre>
+
+<pre><code class="shell">thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh
+USAGE：case_demo.sh nn|lzr|zmn
+thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh nn
+奶奶好！
+thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh lzr
+伯父好！
+thanlon@thanlon-master:~/工程/ShellProjects$ bash case_demo.sh zmn
+伯母好！
+</code></pre>
+
+<hr>
+
+<h5 id="42">42. 函数介绍</h5>
+<p>很多人在写代码的时候，都是习惯从头写到结束，完成后再一起测试。但是测试阶段发现错误非常多。为了解决这个问题，建议将代码优化，一个模块实现一个功能，哪怕一个很小的功能都可以。这样的话，我们的代码就会逻辑上比较简单，代码量少，拍错简单。函数的优点是：<font>调用方便，节省内存；代码量少，排错简单；可以改变代码的执行顺序</font>。
+<hr></p>
+<h5 id="43">43. 函数语法</h5>
+<p>函数有两种语法：</p>
+<pre><code class="bash"># 第一种语法
+函数名(){
+    代码块
+}
+# 第二种语法
+function 函数名{
+    代码块
+}
+</code></pre>
+
+<p><kbd>第一种语法 shell 示例</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 02:19
+
+#定义函数
+start(){
+        echo &quot;Apache start...           [OK]&quot;
+        return 0 # 返回一个值，可写可不写
+}
+
+stop(){
+        echo &quot;Apache stop...            [FAIL]&quot;
+}
+#调用函数
+start
+stop
+</code></pre>
+
+<p><kbd>第二种语法shell示例</kbd>：</p>
+<pre><code class="bash">#!/usr/bin/bash
+#Description：
+#Author: thanlon@sina.com
+#Realease：1.0
+#Create Time：2020/04/19 02:19
+
+#定义函数
+function start {        #不要忘了函数名{之间空一格 
+        echo &quot;Apache start...           [OK]&quot;
+        #return 0
+}
+
+function stop {
+        echo &quot;Apache stop...            [FAIL]&quot;
+}
+#调用函数
+start
+stop
+</code></pre>
+
+<hr>
+
+<h5 id="44-nginx">44. nginx启动管理脚本</h5>
+<p>请确保您的电脑已安装 nginx，我这里将 nginx 安装在 CentOS 7 系统中。</p>
+<p><kbd>nginxd.sh</kbd></p>
+<pre><code class="bash">#!/usr/bin/bash
+
+#参数
+#nginx的安装目录
+nginx_install_doc=/usr/local/nginx1180 #实际上就是字符串
+#nginx的启动命令
+nginxd=$nginx_install_doc/sbin/nginx
+#nginx存放PID的文件
+pid_file=$nginx_install_doc/logs/nginx.pid
+#自定义变量用来代替nginx
+proc=nginx
+
+#调用系统提供的函数库
+. /etc/init.d/functions #.就是source
+#判断有无函数库文件
+if [ -f /etc/init.d/functions ];then
+    . /etc/init.d/functions
+else
+    echo &quot;not found file /etc/init.d/functions&quot;
+fi  
+#if [ -f $pid_file ];then
+    #nginx_process_id=`cat $pid_file` 
+    #nginx_process_num=`ps aux|grep proc|grep -v &quot;grep&quot;|wc -l`
+#fi
+#获取nginx进程数
+nginx_process_num=`ps aux|grep proc|grep -v &quot;grep&quot;|wc -l`
+
+#启动nginx函数
+start(){
+if [ -f $pid_file ]&amp;&amp;[ $nginx_process_num -ge 1 ];then
+    echo &quot;nginx is running...&quot;
+else
+    if [ -f $pid_file ]&amp;&amp;[ $nginx_process_num -lt 1 ];then
+        rm -rf $pid_file #启动失败或断电等导致pid文件没有被删除,正常情况是nginx退出pid文件就被删除
+        #echo &quot;nginx started.`daemon $nginxd`&quot; #启动nginx程序,daemon函数来自函数库
+        action &quot;nginx started.&quot; $nginxd
+    fi
+    #echo &quot;nginx started`daemon $nginxd`&quot;
+    action &quot;nginx started.&quot; $nginxd
+fi
+}
+
+#停止nginx函数
+stop(){
+if [ -f $pid_file ]&amp;&amp;[ $nginx_process_num -ge 1 ];then
+    action &quot;nginx stoped&quot; killall -s QUIT $proc
+    rm -f $pid_file
+else
+    action &quot;nginx stoped.&quot; killall -s QUIT $proc 2&gt;/dev/null
+fi
+}
+
+#重启nginx函数
+restart(){
+    stop
+    sleep 1 # 确保上一步能完成
+    start
+}
+
+#重载nginx
+reload(){
+if [ -f $pid_file ]&amp;&amp;[ $nginx_process_num -ge 1 ];then
+    action &quot;nginx reloaded.&quot; killall -s HUP $proc
+else
+    action &quot;nginx reloaded.&quot; killall -s HUP $proc 2&gt;/dev/null
+fi
+}
+
+#nginx状态
+status(){
+if [ -f $pid_file ]&amp;&amp;[ $nginx_process_num -ge 1 ];then
+    action &quot;nginx running...&quot;
+else
+    action &quot;nginx stoped.&quot;
+fi
+}
+
+case $1 in
+start)start;;
+stop)stop;;
+restart)restart;;
+reload)reload;;
+status)status;;
+*)echo &quot;$USAGE:$0 start|stop|restart|reload|status&quot;;;
+esac
+</code></pre>
+
+<p><code>脚本执行步骤：</code></p>
+<pre><code class="python">[root@test-14 ~]$ ./nginxd.sh start
+nginx started.                                             [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh start
+nginx is running...
+[root@test-14 ~]$ ./nginxd.sh stop
+nginx stoped                                               [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh stop
+nginx stoped.                                              [失败]
+[root@test-14 ~]$ ./nginxd.sh start
+nginx started.                                             [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh restart
+nginx stoped                                               [  确定  ]
+nginx started.                                             [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh reload
+nginx reloaded.                                            [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh status
+nginx running...                                           [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh stop
+nginx stoped                                               [  确定  ]
+[root@test-14 ~]$ ./nginxd.sh status
+nginx stoped.          
+</code></pre>
+
+<pre><code class="python"># 可以将脚本复制到/etc/init.d/下并命名为nginxd，让其可以被当作系统服务管理脚本用service命令执行
+[root@test-14 ~]$ cp nginxd.sh /etc/init.d/nginxd
+</code></pre>
+
+<blockquote>
+<p>可以使用 killall 命令杀掉 nginx，杀掉 nginx 之后 pid 文件就没有了。</p>
+</blockquote>
+<hr>
+
+<h5 id="45">45. 正则表达式介绍</h5>
+<p>正则表达式是一种文本模式的匹配，包括普通字符（如a到z之间的字母）和特殊字符（元字符）。它是一种字符串匹配模式，可以用来检查一个字符串是否包含某种子串替换或者从某个字符串中取出某个条件的子串。正则表达式是第三方产品，很多编程语言都支持，<font>shell 也是支持的。但是不是所有的 shell 命令都是支持正则表达式的。常见的命令中只有 grep、sed、awk 命令支持正则表达式</font>。</p>
+<p>数据源（下面做匹配要用到）：</p>
+<p><kbd>file</kbd></p>
+<pre><code class="shell">ac
+ab
+abbc
+abcc
+aabbcc
+abbbc
+abbbbbc
+acc
+abc
+asb
+aa
+bb
+a_c
+zZc
+aAAAAc
+a c
+ABC
+
+ccc
+
+dddd
+http://www
+abababab
+c c d
+123
+a3c
+e*f
+</code></pre>
+
+<blockquote>
+<p>nginx也支持正则表达式。</p>
+</blockquote>
+<hr>
+
+<h5 id="46">46. 特殊字符</h5>
+<table>
+<thead>
+<tr>
+<th>定位符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>锚定开头^a是以a开头，默认锚定一个字符</td>
+</tr>
+<tr>
+<td>$</td>
+<td>锚定结尾a$是以a结尾，默认锚定一个字符</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>定位符：同时锚定开头和结尾，做精确匹配。如果是单一锚定开头和结尾，做模糊匹配。</p>
+</blockquote>
+<p>( 1 ) 精确匹配和模糊匹配</p>
+<pre><code class="python"># 匹配以a开头，以c结尾
+thanlon@thanlon-master:~$ egrep &quot;^ac$&quot; file 
+ac
+</code></pre>
+
+<pre><code class="python"># 匹配以a开头
+thanlon@thanlon-master:~$ egrep &quot;^a&quot; file 
+ac
+ab
+abbc
+abcc
+aabbcc
+abbbc
+abbbbbc
+acc
+abc
+asb
+aa
+a_c
+aAAAAc
+a c
+abababab
+a3c
+a*c
+bc
+</code></pre>
+
+<pre><code class="python"># 匹配以a结尾
+thanlon@thanlon-master:~$ egrep &quot;a$&quot; file 
+aa
+</code></pre>
+
+<p>( 2 ) 匹配字符串</p>
+<table>
+<thead>
+<tr>
+<th>.</th>
+<th>匹配除了回车以外的任意字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>( )</td>
+<td>字符串分组</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>和.一样匹配任意字符，但[]可以定义取某个范围内的字符</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td>表示否定</td>
+</tr>
+<tr>
+<td>\</td>
+<td>转义字符</td>
+</tr>
+<tr>
+<td>|</td>
+<td>管道，或的意思</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python"># .
+thanlon@thanlon-master:~$ egrep &quot;^a.c$&quot; file 
+acc
+abc
+a_c
+a c
+a3c
+</code></pre>
+
+<pre><code class="python"># []
+thanlon@thanlon-master:~$ egrep &quot;^a[0-9]c$&quot; file 
+a3c
+</code></pre>
+
+<pre><code class="python"># 在[]加^表示取反
+thanlon@thanlon-master:~$ egrep &quot;^a[^0-9]c$&quot; file 
+acc
+abc
+a_c
+a c
+thanlon@thanlon-master:~$ egrep &quot;^a[^a-z]c$&quot; file 
+a_c
+a c
+a3c
+</code></pre>
+
+<pre><code class="python"># 转义字符，*号在正则表达始终是有意义的，所以
+thanlon@thanlon-master:~$ egrep &quot;^a\*c$&quot; file 
+a*c
+</code></pre>
+
+<pre><code class="python"># 分组()和管道|
+thanlon@thanlon-master:~$ egrep &quot;^(a|b)c$&quot; file 
+ac
+bc
+</code></pre>
+
+<blockquote>
+<p>当[没有设定分组的时候，.和[]是同一个意思。</p>
+</blockquote>
+<p>( 3 ) 限定符，对前面的字符或者字符串做限定说明</p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>某个字符加*号表示该字符不会出现或出现多次</td>
+</tr>
+<tr>
+<td>？</td>
+<td>与*号相似，但是该字符出现一次或不出现</td>
+</tr>
+<tr>
+<td>+</td>
+<td>与*号相似，表示其前面字符出现一次或多次，但必须出现一次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>某个字符之后出现，表示该字符最少n次，最多m次</td>
+</tr>
+<tr>
+<td>{m}</td>
+<td>正好出现m次</td>
+</tr>
+</tbody>
+</table>
+<p>测试案例：</p>
+<pre><code class="python"># 某个字符加*号表示该字符不会出现或出现多次
+thanlon@thanlon-master:~$ egrep &quot;^ab*c$&quot; file 
+ac
+abbc
+abbbc
+abbbbbc
+abc
+</code></pre>
+
+<pre><code class="python"># 某个字符加?号表示该字符出现一次或不出现
+thanlon@thanlon-master:~$ egrep &quot;^ab?c$&quot; file 
+ac
+abc
+</code></pre>
+
+<pre><code class="python"># +与*号相似，表示其前面字符出现一次或多次，但必须出现一次
+thanlon@thanlon-master:~$ egrep &quot;^ab+c$&quot; file 
+abbc
+abbbc
+abbbbbc
+abc
+</code></pre>
+
+<pre><code class="python"># {n,m}某个字符之后出现，表示该字符最少n次，最多m次 
+thanlon@thanlon-master:~$ egrep &quot;^ab{1,6}c$&quot; file 
+abbc
+abbbc
+abbbbbc
+abc
+</code></pre>
+
+<pre><code class="python"># 正好出现m次
+thanlon@thanlon-master:~$ egrep &quot;^ab{2}c$&quot; file 
+abbc
+thanlon@thanlon-master:~$ egrep &quot;^ab{1}c$&quot; file 
+abc
+</code></pre>
+
+<h5 id="47-posix">47. 正则表达式POSIX字符</h5></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

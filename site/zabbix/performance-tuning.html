@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/zabbix/performance-tuning.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li class="active">
+    <a href="performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="version-upgrade.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="distributed-monitor.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#zabbix">Zabbix性能调优</a></li>
+            <li><a href="#1">1. 数据库调优</a></li>
+            <li><a href="#2">2. 进程调优</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="Zabbix" src="../imgs/zabbix/202011061125.png" /></p>
+<h4 id="zabbix">Zabbix性能调优</h4>
+<hr>
+
+<h5 id="1">1. 数据库调优</h5>
+<p>( 1 ) Zabbix是写多读少的业务，所以要提高Zabbix写入的性能。MyISAM 引擎时不可以使用的，至少要使用 InnoDB 引擎 ( mysql 5.5 )，或者使用 TokuDB 引擎 ( mysql 5.7 )，当然也可以把数据库的硬盘升级为SSD硬盘。</p>
+<p>( 2 ) 去掉没有用的监控项，增加监控项的取值间隔，减少历史数据保存周期</p>
+<p>( 3 ) 针对Zabbix历史数据和趋势图的表进行周期性分表</p>
+<p>( 4 ) 把被动模式修改为主动模式，增加 zabbix-proxy 将监控项的采集数据集中写入，而不是每个 Zabbix Agent 都向最终的 Zabbix Server 发数据
+<hr></p>
+<h5 id="2">2. 进程调优</h5>
+<p>( 1 ) 针对Zabbix-Server进程调优，进程忙碌的时候就增加进程数量</p>
+<p>将扫描IP网段的频率时值为10s，这样会增加自动发现进程的压力：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602214041801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602214049405.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>Zabbix的进程监控都在 <font>图形</font> 里面，可以选择查看数据采集进程的情况，如自动发现进程。这里不难发现，自动发现进程的已经到了100%：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602215731375.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>下面通过调优来降低自动发现忙碌程度：</p>
+<pre><code class="python"># 这里把自动发现进程数设置为6个(0~250)
+[root@Zabbix-server ~]$ vim /etc/zabbix/zabbix_server.conf 
+StartDiscoverers=6
+
+# 重启Zabbix Server
+[root@Zabbix-server ~]$ systemctl start zabbix-server.service
+</code></pre>
+
+<p>不建议上来就把值设置为最大，因为 <font>每增加一个进程需要消耗一定内存空间的</font>。然后再看自动发现的忙碌程度就降低了非常多：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602220910367.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>调优的原则是：哪个进程比较忙就增加进程数量，不建议加到几十倍，最好要一点点去调。<font>要保证曲线平稳，而不是高低起伏大</font>。</p>
+<p>( 2 ) 针对Zabbix-Server缓存调优，剩余内存少的时候增加缓存值</p>
+<p>缓存的作用是用来存储监控的主机，<font>这些目标主机数据是从数据库查出来的然后放到内存中的</font>。 当然，<font>取值的监控项</font> 和 <font>触发器指标</font> 也都是存在 Zabbix Server 的缓存中。如果缓存不够用了，Zabbix Server 就会出问题。Zabbix Server 默认的缓存是 8M。为了测试缓存调优效果，这里先把缓存调为最低，</p>
+<pre><code class="python"># 修改缓存为128K(128K-8G)
+[root@Zabbix-server ~]$ vim /etc/zabbix/zabbix_server.conf 
+CacheSize=128K
+
+# 重启Zabbix Server
+[root@Zabbix-server ~]$ systemctl restart zabbix-server.service
+</code></pre>
+
+<p>这个时候发现，Zabbix Server 挂掉：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602222212311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<pre><code class="python"># 查看Zabbix Server日志
+[root@Zabbix-server ~]$ tailf /var/log/zabbix/zabbix_server.log
+ 67257:20200602:102244.619 __mem_malloc: skipped 1 asked 1816 skip_min 1104 skip_max 1104
+ 67257:20200602:102244.619 [file:dbconfig.c,line:94] __zbx_mem_realloc(): out of memory (requested 1816 bytes)
+ 67257:20200602:102244.619 [file:dbconfig.c,line:94] __zbx_mem_realloc(): please increase CacheSize configuration parameter
+</code></pre>
+
+<p>意思也就是内存不足( out of memory )，让我们增加 CacheSize 配置参数。如果以后有这样的报警，需要把缓存调整大一些。除了 <font>内部进程、采集进程</font> 还有缓存使用率：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602222925219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>大于75%的时候会报警，如果缓存不够就需要增加缓存！</p></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

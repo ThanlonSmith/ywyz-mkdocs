@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/ubuntu/software-install.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../zabbix/install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="../centos/software-install.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../zabbix/install.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">安装百度拼音输入法</a></li>
+            <li><a href="#1">1. 下载</a></li>
+            <li><a href="#2">2. 安装</a></li>
+            <li><a href="#3">3. 配置</a></li>
+            <li><a href="#4">4. 卸载</a></li>
+        <li class="main "><a href="#mysql80">安装MySQL8.0</a></li>
+            <li><a href="#1-mysql">1. 安装mysql</a></li>
+            <li><a href="#2_1">2. 查看默认用户名和密码</a></li>
+            <li><a href="#3-mysql">3. 使用默认用户登录mysql</a></li>
+            <li><a href="#4_1">4. 修改用户名和密码</a></li>
+            <li><a href="#5">5. 修改数据库的编码</a></li>
+        <li class="main "><a href="#navidia">安装NAVIDIA显卡驱动程序</a></li>
+            <li><a href="#1-navidia">1. 使用附加驱动安装NAVIDIA驱动</a></li>
+            <li><a href="#2-navidia">2. 使用命令安装NAVIDIA驱动</a></li>
+            <li><a href="#3-navidia">3. 完全卸载NAVIDIA驱动</a></li>
+            <li><a href="#4_2">4. 其它命令</a></li>
+        <li class="main "><a href="#cudacudnn">下安装CUDA和cuDNN</a></li>
+            <li><a href="#1-cuda">1. 安装CUDA</a></li>
+            <li><a href="#2-cudnn">2. 安装cuDNN</a></li>
+        <li class="main "><a href="#tensorflow">安装与使用TensorFlow</a></li>
+            <li><a href="#1-piptensorflow">1. pip安装TensorFlow</a></li>
+            <li><a href="#2-anacondatensorflow">2. Anaconda安装TensorFlow</a></li>
+            <li><a href="#3-tensorflow-docker">3. TensorFlow Docker容器的构建</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="ubuntu logo" src="../imgs/ubuntu/202011061058.jpg" /></p>
+<h4 id="_1">安装百度拼音输入法</h4>
+<hr>
+
+<h5 id="1">1. 下载</h5>
+<p>官网下载DEB包：<a href="https://srf.baidu.com/site/guanwang_linux/index.html">https://srf.baidu.com/site/guanwang_linux/index.html</a></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200629015637957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>解压缩下载好的zip文件：</p>
+<pre><code class="shell">thanlon@thanlon:~/下载$ unzip Ubuntu_Deepin-fcitx-baidupinyin-64.zip 
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200629044601180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="2">2. 安装</h5>
+<p>更新和升级系统：</p>
+<pre><code class="shell">thanlon@thanlon:~$ sudo apt update &amp;&amp; sudo apt upgrade -y
+</code></pre>
+
+<p>安装包管理工具 <strong><code>aptitude</code></strong>：</p>
+<pre><code class="shell">thanlon@thanlon:~$ sudo apt install aptitude
+</code></pre>
+
+<p>通过aptitude安装输入法依赖的fcitx和qt包：</p>
+<pre><code class="shell">thanlon@thanlon:~$ sudo aptitude install fcitx-bin fcitx-table fcitx-config-gtk fcitx-config-gtk2 fcitx-frontend-all
+thanlon@thanlon:~$ sudo aptitude install qt5-default qtcreator qml-module-qtquick-controls2
+</code></pre>
+
+<p>安装输入法并解决可能出现的依赖：</p>
+<pre><code class="py">thanlon@thanlon:~/下载$ sudo dpkg -i fcitx-baidupinyin.deb
+thanlon@thanlon:~/下载$ sudo apt install --fix-broken -y
+</code></pre>
+
+<hr>
+
+<h5 id="3">3. 配置</h5>
+<p>找到设置中的【区域和语言】，选择【管理已安装的语言】：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020062904575418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200629025821554.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>将键盘输入系统修改为 <kbd>fcitx键盘输入系统</kbd> 并应用到整个系统，然后重启系统：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200629030144363.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>系统重启后会让我们配置输入法，配置完成后就可以使用了：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200629050413429.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200629050528153.png" /></p>
+<p>这个时候可以选择性把系统自带的IBus键盘输入法系统给删除：</p>
+<pre><code class="shell">thanlon@thanlon:~$ sudo apt purge ibus
+</code></pre>
+
+<hr>
+
+<h5 id="4">4. 卸载</h5>
+<p>卸载输入法：</p>
+<pre><code class="py">thanlon@thanlon:~$ sudo dpkg --purge fcitx-baidupinyin:amd64
+</code></pre>
+
+<p>卸载不需要的依赖包：</p>
+<pre><code class="shell"># 或者使用:sudo apt autoremove
+thanlon@thanlon:~$ sudo aptitude purge fcitx-bin fcitx-table fcitx-config-gtk fcitx-config-gtk2 fcitx-frontend-all
+# 卸载qt相关包
+thanlon@thanlon:~$ sudo aptitude purge qt5-default qtcreator qml-module-qtquick-controls2
+</code></pre>
+
+<hr>
+
+<h4 id="mysql80">安装MySQL8.0</h4>
+<hr>
+
+<h5 id="1-mysql">1. 安装mysql</h5>
+<pre><code class="python">$ sudo apt-get install mysql-server
+</code></pre>
+
+<hr>
+
+<h5 id="2_1">2. 查看默认用户名和密码</h5>
+<p>mysql 安装完成后，默认用户名不是 root，为了方便，一般我们需要修改成我们想要的用户名和密码。进入配置文件：</p>
+<pre><code class="js">root@vivobook:/home/thanlon# vim /etc/mysql/debian.cnf
+debian.cnf:
+　　# Automatically generated for Debian scripts. DO NOT TOUCH!
+　　[client]
+　　host     = localhost
+　　user     = debian-sys-maint
+　　password = UwPyJArufIVRvuYC
+　　socket   = /var/run/mysqld/mysqld.sock
+　　[mysql_upgrade]
+　　host     = localhost
+　　user     = debian-sys-maint
+　　password = UwPyJArufIVRvuYC
+　　socket   = /var/run/mysqld/mysqld.sock
+</code></pre>
+
+<p>可以看到，在配置文件中存在默认用户名和密码，在这里我们先使用配置文件中的用户名 user 和 password 登录到数据库。
+<hr></p>
+<h5 id="3-mysql">3. 使用默认用户登录mysql</h5>
+<pre><code class="python">$ mysql -udebian-sys-maint -p
+</code></pre>
+
+<hr>
+
+<h5 id="4_1">4. 修改用户名和密码</h5>
+<p>查看 mysql 中默认数据库：<strong><code>show databases</code></strong></p>
+<p>使用数据库mysql：<strong><code>use mysql</code></strong></p>
+<p>将root用户的密码设置为空：<strong><code>update user set authentication_string='' where user='root'</code></strong></p>
+<blockquote>
+<p>不可以使用<strong><code>update user set authentication_string=password(密码) where user='root'</code></strong>，其原因是该版本 mysql 没有 password 函数。</p>
+</blockquote>
+<p>清空 root 用户默认的密码：<code>select user,authentication_string from user where user='root'</code></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200309164638560.png" /></p>
+<p>为 root 设置密码：<strong><code>ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456'</code></strong></p>
+<p>查看设置 root 用户和密码：<strong><code>select user,authentication_string from user where user='root'</code></strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200309165116181.png" />
+<hr></p>
+<h5 id="5">5. 修改数据库的编码</h5>
+<p>可以登录mysql后使用<code>\s</code>查看默认的编码:</p>
+<pre><code class="python">Server characterset:    latin1
+Db     characterset:    latin1
+Client characterset:    utf8
+Conn.  characterset:    utf8
+</code></pre>
+
+<p>如果编码不是 utf8，我们需要把编码修改成 utf8，所以：</p>
+<pre><code class="python"># 修改配置文件
+vim /etc/mysql/conf.d/mysql.cnf
+# 加入下面两行
+[mysqld]
+character-set-server=utf8
+</code></pre>
+
+<p>再查看编码会发现都是 utf8 了:</p>
+<pre><code class="python">Server characterset:    utf8
+Db     characterset:    utf8
+Client characterset:    utf8
+Conn.  characterset:    utf8
+</code></pre>
+
+<hr>
+
+<h4 id="navidia">安装NAVIDIA显卡驱动程序</h4>
+<hr>
+
+<h5 id="1-navidia">1. 使用附加驱动安装NAVIDIA驱动</h5>
+<p>在已安装的程序中找到并打开附加驱动：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020051418093848.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>你可以换成选项中其它三个 NVIDIA 驱动，我这里选择 nvidia-driver440 版本的，选中之后再选择应用更改等待自动下载安装就ok了：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200514181700919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<hr>
+
+<h5 id="2-navidia">2. 使用命令安装NAVIDIA驱动</h5>
+<p>这里以安装 nvidia-driver-440 版本驱动为例，安装只需要下面一条命令就可以：</p>
+<pre><code class="shell">thanlon@thanlon:~$ sudo apt install nvidia-driver-440
+</code></pre>
+
+<p>安装完成后需要重新启动系统才能生效，重启系统后通过 <strong><code>nvidia-smi</code></strong> 命令可以查看有没有应用在使用NAVIDIA显卡驱动，如果存在这样的应用则表示安装成功：</p>
+<pre><code class="python">thanlon@thanlon:~$ nvidia-smi
+Thu May 14 22:55:34 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.64       Driver Version: 440.64       CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce MX150       Off  | 00000000:02:00.0 Off |                  N/A |
+| N/A   49C    P5    N/A /  N/A |    294MiB /  2002MiB |      7%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1098      G   /usr/lib/xorg/Xorg                           103MiB |
+|    0      1516      G   /usr/bin/gnome-shell                          95MiB |
+|    0      2473      G   gnome-control-center                           1MiB |
+|    0      2706      G   ...AAAAAAAAAAAACAAAAAAAAAA= --shared-files    92MiB |
++-----------------------------------------------------------------------------+
+</code></pre>
+
+<p>当然还可以通过系统设置里的系统信息来查看 NAVIDIA 显卡驱动安装是否成功：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020051422544632.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>另外可以使用 <strong><code>nvidia-setting</code></strong> 命令打开NAVIDIA设置面板，也可以在应用程序中找到直接打开：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200514225747634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="3-navidia">3. 完全卸载NAVIDIA驱动</h5>
+<p>如果想卸载 NAVIDIA 驱动，使用附加驱动的方式只能切换驱动，但卸载不了驱动，只能通过命令的方式卸载：</p>
+<pre><code class="python">$ sudo apt-get --purge remove nvidia*
+$ sudo apt-get --purge remove &quot;*nvidia*&quot;
+$ sudo apt-get --purge remove &quot;*cublas*&quot; &quot;cuda*&quot;
+$ sudo apt autoremove
+</code></pre>
+
+<hr>
+
+<h5 id="4_2">4. 其它命令</h5>
+<pre><code class="python"># 查看NAVIDIA的型号
+$ lspci |grep -i nvidia
+02:00.0 3D controller: NVIDIA Corporation GP108M [GeForce MX150] (rev a1)
+# 查看NVIDIA驱动版本
+sudo dpkg --list | grep nvidia-*
+# 检查适合系统的NAVIDIA版本
+$ nvidia-detector
+nvidia-driver-440
+</code></pre>
+
+<hr>
+
+<h4 id="cudacudnn">下安装CUDA和cuDNN</h4>
+<hr>
+
+<h5 id="1-cuda">1. 安装CUDA</h5>
+<p>CUDA：<a href="https://developer.nvidia.com/cuda-toolkit"><strong>https://developer.nvidia.com/cuda-toolkit</strong></a></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200828145319154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70#pic_left" />
+选择平台，不同的平台有不同安装步骤：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200828150008310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70#pic_center" /></p>
+<p>根据下面的命令安装就可以了：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200828150001298.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70#pic_center" /></p>
+<pre><code class="python">$ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+$ sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+$ wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.3-450.51.06-1_amd64.deb
+$ sudo dpkg -i cuda-repo-ubuntu2004-11-0-local_11.0.3-450.51.06-1_amd64.deb
+$ sudo apt-key add /var/cuda-repo-ubuntu2004-11-0-local/7fa2af80.pub
+$ sudo apt-get update
+$ sudo apt-get -y install cuda
+</code></pre>
+
+<p>CUDA 默认是被安装到 /usr/local/ 下，可以查看 CUDA 版本：</p>
+<pre><code class="python">$ cd /usr/local/cuda
+$ cat version.txt 
+CUDA Version 11.0.228
+</code></pre>
+
+<hr>
+
+<h5 id="2-cudnn">2. 安装cuDNN</h5>
+<p>cuDNN：<a href="https://developer.nvidia.com/cudnn"><strong>https://developer.nvidia.com/cudnn</strong></a></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200828145648541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70#pic_left" /></p>
+<p>需要登录才能进入下载页面，还需要填写调查问卷！最后才进入下载页面 <a href="https://developer.nvidia.com/rdp/cudnn-download"><strong>https://developer.nvidia.com/rdp/cudnn-download</strong></a>：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200828151940346.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70#pic_left" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200828152856729.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70#pic_left" /></p>
+<p>复制链接使用命令下载：</p>
+<pre><code class="python">$ wget https://developer.download.nvidia.cn/compute/machine-learning/cudnn/secure/8.0.2.39/11.0_20200724/cudnn-11.0-linux-x64-v8.0.2.39.tgz
+</code></pre>
+
+<p>解压缩：</p>
+<pre><code class="python">$ tar zxvf cudnn-11.0-linux-x64-v8.0.2.39.tgz
+</code></pre>
+
+<p>解压缩之后会得到 cuda 文件夹，接着执行下面的操作：</p>
+<pre><code class="python">$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h
+$ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+</code></pre>
+
+<p>查看版本号：</p>
+<pre><code class="js">$ cat cuda/include/cudnn_version.h |grep ^#
+#ifndef CUDNN_VERSION_H_
+#define CUDNN_VERSION_H_
+#define CUDNN_MAJOR 8
+#define CUDNN_MINOR 0
+#define CUDNN_PATCHLEVEL 2
+#define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+#endif /* CUDNN_VERSION_H */
+</code></pre>
+
+<p>版本是 v8.0.2！
+<hr></p>
+<h4 id="tensorflow">安装与使用TensorFlow</h4>
+<hr>
+
+<h5 id="1-piptensorflow">1. pip安装TensorFlow</h5>
+<p>这里使用的是当前日期最新版的 Ubuntu20.04 作为操作系统平台。20.04默认安装了Python3.8版本，但是没有安装pip，所以可以使用apt先安装pip：</p>
+<pre><code class="shell">$ sudo apt install python3-pip -y
+</code></pre>
+
+<p>查看 pip 的版本，如果不是最新版本顺便将 pip 升级到最新版本：</p>
+<pre><code class="shell">$ pip3  -V
+$ pip3 install --upgrade pip
+</code></pre>
+
+<blockquote>
+<p><font>安装 pip 的方式很多，例如可以把 pip 下载到本地使用 Python 命令安装等。安装 TensorFlow2 需要使用高于 19.0 的pip版本。</font></p>
+</blockquote>
+<p>安装之前需要把 pip 更新到最新版：</p>
+<pre><code class="shell">$ pip3 install --upgrade pip
+</code></pre>
+
+<p>安装 virtualenv 来帮助我们创建虚拟环境，这里使用的是国内阿里云的镜像源，下载速度会快很多：</p>
+<pre><code class="shell">$ pip3 install -U virtualenv -i https://mirrors.aliyun.com/pypi/simple
+</code></pre>
+
+<p>创建一个新的 Python 虚拟环境，创建一个 ./venv 目录来存放它：</p>
+<pre><code class="shell">$ virtualenv ./venv/
+</code></pre>
+
+<blockquote>
+<p><font>如果我们想把系统中已有的库也加入到虚拟环境中，可以加上--system-site-packages。指定Python版本适用-p参数，如：-p python3</font></p>
+</blockquote>
+<p>激活该虚拟环境：</p>
+<pre><code class="shell">$ source venv/bin/activate
+</code></pre>
+
+<p>使用 pip 安装支持 GPU 的 TensorFlow 软件包，可以选择稳定版或预览版。安装稳定版的TensorFlow：</p>
+<pre><code class="shell">(venv) $ pip install tensorflow -i https://mirrors.aliyun.com/pypi/simple/
+</code></pre>
+
+<blockquote>
+<p><font>如果安装只支持CPU版本：pip install tensorflow-cpu；同理安装只支持GPU版本：pip install tensorflow-cpu。指定版本：pip install tensorflow-gpu==2.2.0</font></p>
+</blockquote>
+<p>安装预览版使用下面的命令：</p>
+<pre><code class="shell">(venv) $ pip install tf-nightly -i https://mirrors.aliyun.com/pypi/simple/
+</code></pre>
+
+<p>安装之前一定要 <font>保证 /tmp 空闲足够充足，大概需要3G~4G</font>，当然也可以通过命令临时更改 /tmp 容量：</p>
+<pre><code class="shell">(venv) $ sudo mount -t tmpfs -o size=4G /tmp
+(venv) $ df -h
+/dev/sda10      4.0G     0  4.0G    0% /tmp
+</code></pre>
+
+<p>查看已安装的所有包：</p>
+<pre><code class="py">(venv) $ pip list
+</code></pre>
+
+<p>测试不指定 CPU 和 GPU 版本的 TensorFlow 是否不区分 CPU 和 GPU，是否会支持GPU。测试发现确实支持GPU：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200704034512148.png" /></p>
+<blockquote>
+<p><font>直接安装的TensorFlow，并没有指定GPU版本，却得到GPU的支持。实际上新版本的TensorFlow不指定GPU版本同样支持GPU。对于1.15及更早版本，CPU和GPU软件包是分开的。pip install tensorflow==1.15是CPU版本，pip install tensorflow-gpu==1.15是GPU版本。</font></p>
+</blockquote>
+<hr>
+
+<h5 id="2-anacondatensorflow">2. Anaconda安装TensorFlow</h5>
+<p>Anaconda 是一个开源的 Python 发行版本，其中包含了很多流行的用于科学计算、数据分析的 Python 包。可以从官网下载，官网地址：<strong><a href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200703134238628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>也可以到清华镜像站下载，官网链接：<strong><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a></strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200703135637181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>我们这里直接从清华镜像站复制了 Anaconda 最新版本的链接，使用 wget 或者 axel 先下载到本地：</p>
+<pre><code class="shell">$ axel https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+</code></pre>
+
+<p>执行脚本安装 Anaconda，安装过程中根据提示结合自己需要做例如选择安装路径、是否安装 Visual Stadio Code 的一些操作：</p>
+<pre><code class="shell">$ ./Anaconda3-5.3.1-Linux-x86_64.sh
+</code></pre>
+
+<p>Anaconda 安装成功之后接下来就可以安装 TensorFlow 了，Anaconda 默认使用国外的镜像源，在我们安装 TensorFlow 之前先更换为国内的镜像源，如更换为 <font>中科大镜像源</font>，第一个是最重要且主要的镜像源地址，第二个添不添加都可以：</p>
+<pre><code class="shell">$ conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main
+$ conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free
+</code></pre>
+
+<p>更新conda：</p>
+<pre><code class="shell">thanlon@thanlon:~$ conda update -n base -c defaults conda
+</code></pre>
+
+<blockquote>
+<p><font>conda比pip更加强大，可以安装非Python库。所以，非常推荐使用Anaconda安装TensorFlow。</font></p>
+</blockquote>
+<p>创建并进入虚拟环境，离开虚拟环境使用 <strong><code>conda deactivate</code></strong> 命令：</p>
+<pre><code class="shell">thanlon@thanlon:~$ conda create -n venv python=3.8
+thanlon@thanlon:~$ conda activate venv
+(venv) thanlon@thanlon:~$ conda deactivate
+</code></pre>
+
+<p>安装 TensorFlow GPU 最新版本，当前最新版是 tensorflow-gpu-2.2.0，已知版本的情况下可以指定版本：</p>
+<pre><code class="shell">(venv) thanlon@thanlon:~$ conda install tensorflow-gpu
+</code></pre>
+
+<p>为了检查安装的 TensorFlow 是否是 GPU 版本，需要安装 jupyter notebook 写程序测试：</p>
+<pre><code class="shell">(venv) thanlon@thanlon:~$ conda install jupyter notebook
+(venv) thanlon@thanlon:~$ jupyter notebook
+</code></pre>
+
+<p>测试程序如下，说明我们已经成功安装支持 GPU 的TensorFlow：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200704032216938.png" /></p>
+<p>至此，Anaconda 安装 TensorFlow 已完成！
+<hr></p>
+<h5 id="3-tensorflow-docker">3. TensorFlow Docker容器的构建</h5>
+<p>首先安装Docker，Dockeer官方安装文档：<strong><a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200703203416604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>安装方式有三种，我这里选择存储库安装。卸载旧版本的Docker，如果之前安装过：</p>
+<pre><code class="py">$ sudo apt-get remove docker docker-engine docker.io containerd runc
+</code></pre>
+
+<p>设置 Docker 存储库：</p>
+<pre><code class="shell">$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+</code></pre>
+
+<p>添加 Docker 的官方 GPG 密钥：</p>
+<pre><code class="shell">$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre>
+
+<p>设置稳定的存储：</p>
+<pre><code class="shell">$ sudo add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+</code></pre>
+
+<p>更新 apt 程序包索引，并安装最新版本的 Docker Engine 和容器：</p>
+<pre><code class="shell">$ sudo apt-get update &amp;&amp; sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre>
+
+<p>运行 hello-world 映像来验证是否正确安装了 Docker Engine：</p>
+<pre><code class="shell">$ sudo docker run -it hello-world
+</code></pre>
+
+<p>查看 Docker 是否启动：</p>
+<pre><code class="shell">$ systemctl status docker.service 
+</code></pre>
+
+<p>至此 Docker 安装成功，下面开始安装 TensorFlow。首先下载 TensorFlow Docker 镜像，TensorFlow 提供了很多 tensorFlow Docker 镜像。官方 TensorFlow Docker 映像位于 <strong><a href="https://hub.docker.com/r/tensorflow/tensorflow/">tensorflow/tensorflow</a></strong> Docker Hub 代码库中：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200703211731735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<blockquote>
+<p><strong>References：<a href="https://tensorflow.google.cn/install/docker#gpu_support">https://tensorflow.google.cn/install/docker#gpu_support</a></strong></p>
+</blockquote>
+<p>更换下载源为国内的镜像源 Docker 官方中国区：<kbd>https://registry.docker-cn.com</kbd>；阿里云：<kbd>https://pee6w651.mirror.aliyuncs.com</kbd>：</p>
+<pre><code class="shell">$ sudo vim /etc/docker/daemon.json
+$ systemctl restart docker.service 
+$ cat /etc/docker/daemon.json
+{&quot;registry-mirrors&quot;: [&quot;https://pee6w651.mirror.aliyuncs.com&quot;]}
+</code></pre>
+
+<p>这里就拉去一个支持 GPU 和 Jupyter 的版本：</p>
+<pre><code class="shell">$ docker pull tensorflow/tensorflow:latest-gpu-jupyter  # latest release w/ GPU support and Jupyter
+</code></pre>
+
+<p>成功安装：</p>
+<pre><code class="shell">$ sudo docker images
+REPOSITORY              TAG                  IMAGE ID            CREATED             SIZE
+tensorflow/tensorflow   latest-gpu-jupyter   8d78dd1e1b64        8 weeks ago         3.99GB
+</code></pre>
+
+<p>查看本地已有的容器：</p>
+<pre><code class="shell">$ sudo docker images
+REPOSITORY              TAG                  IMAGE ID            CREATED             SIZE
+tensorflow/tensorflow   latest-gpu-jupyter   8d78dd1e1b64        8 weeks ago         3.99GB
+tensorflow/tensorflow   latest-gpu           f5ba7a196d56        8 weeks ago         3.84GB
+</code></pre>
+
+<p>接下来运行 TAG 是 latest-gpu 的容器，进入容器后可以查看内置的 Python 版本以及安装好的 TensorFlow：</p>
+<pre><code class="shell">$ sudo docker run -it tensorflow/tensorflow:latest-gpu
+root@c4fceafad48c:/# python -V
+Python 3.6.9
+root@c4fceafad48c:/# pip list
+...
+tensorflow-gpu         2.2.0
+...
+</code></pre>
+
+<p>可以另外开一个Terminal，查看正在运行的镜像：</p>
+<pre><code class="shell">$ sudo docker ps
+CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS              PORTS               NAMES
+49b31ca53c49        tensorflow/tensorflow:latest-gpu   &quot;/bin/bash&quot;         17 seconds ago      Up 16 seconds                           gallant_shirley
+</code></pre>
+
+<p>运行 TAG 是 latest-gpu-jupyter 的容器：</p>
+<pre><code class="shell">$ sudo docker run -p 8888:8888 tensorflow/tensorflow:latest-gpu-jupyter
+</code></pre>
+
+<p>浏览器访问下面的链接就可以使用 jupyter notebook：
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200703225523709.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020070322554697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

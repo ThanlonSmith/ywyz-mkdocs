@@ -1,0 +1,151 @@
+body hr {
+    border-top: 1px dotted #A30000;
+}
+
+p {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 17px;
+}
+
+pre code {
+    font-size: 14px;
+}
+
+font {
+    /*color: #A30000;*/
+    color: #c7254e;
+    font-weight: 600;
+}
+
+body > div.container > div.col-md-3 {
+    padding-right: 0;
+}
+
+/*----github图标的样式----*/
+.github-btn {
+    height: 30px;
+    overflow: hidden;
+    margin-top: -5px;
+}
+
+.gh-btn, .gh-count, .gh-ico {
+    float: left;
+}
+
+.gh-btn, .gh-count {
+    padding: 2px 5px 2px 4px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.gh-btn {
+    background-color: #eee;
+    background-image: linear-gradient(to bottom, #fcfcfc 0, #eee 100%);
+    background-repeat: no-repeat;
+    border: 1px solid #d5d5d5;
+}
+
+.gh-btn:hover, .gh-btn:visited {
+    background-image: none;
+    text-decoration: none;
+    color: #333333;
+}
+
+.gh-btn, .gh-count, .gh-ico {
+    float: left;
+}
+
+.gh-ico {
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    background: url(../img/github.svg) 0 0 / 100% 100% no-repeat;
+    margin-top: 5px;
+}
+
+body > div.container > div.col-md-9 > p:nth-child(1) {
+    margin-top: 10px;
+}
+
+/*----菜单栏样式----*/
+body > div.container > div.col-md-3 > div > ul > li > a {
+    color: #A30000;
+}
+
+/*----！菜单栏样式----*/
+
+body > footer > hr {
+    margin-top: 0;
+}
+
+footer {
+    margin-top: 0;
+}
+
+body > footer > p {
+    font-size: 15px;
+}
+
+#qq > img, #wechat > img, #weibo > img, #go_top > img {
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+body > div.container > div.col-md-9 > p > kbd {
+    background-color: #A30000;
+    padding: 4px 4px 2px 4px;
+}
+
+/*鼠标划过导航的样式*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #212121;
+}
+
+/*！鼠标划过导航的样式！*/
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    background-color: #111111;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:active {
+    color: #F44336;
+    background-color: #eeeeee;
+}
+
+h4, h5 {
+    font-weight: 600;
+}
+
+a:hover, a:focus {
+    color: #333333;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.col-md-9 {
+    padding-bottom: 15px;
+}
+
+/** blockquote */
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    /*border-left: 5px solid #eee;*/
+    background-color: #eef0f4;
+    border-left: 8px solid #dddfe4;
+}
+
+/**! blockquote */
+footer {
+    background-color: #2c2c2c;
+}

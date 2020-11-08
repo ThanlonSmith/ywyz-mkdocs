@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/zabbix/monitor-mysql.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li class="active">
+    <a href="monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="../kubernetes/kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="custom-template.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="automatic-monitor.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#zabbixperconamysql">Zabbix使用percona监控MySQL</a></li>
+            <li><a href="#1">1. 插件下载</a></li>
+            <li><a href="#2">2. 插件安装</a></li>
+            <li><a href="#3">3. 导入模板</a></li>
+            <li><a href="#4">4. 模板不兼容的处理</a></li>
+            <li><a href="#5">5. 测试取监控项的值</a></li>
+            <li><a href="#6">6. 主机链接新模板</a></li>
+            <li><a href="#7">7. 主从状态监控项</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="Zabbix" src="../imgs/zabbix/202011061125.png" /></p>
+<h4 id="zabbixperconamysql">Zabbix使用percona监控MySQL</h4>
+<hr>
+
+<h5 id="1">1. 插件下载</h5>
+<p>插件下载地址：<a href="https://www.percona.com/downloads/percona-monitoring-plugins/LATEST/"><strong>https://www.percona.com/downloads/percona-monitoring-plugins/LATEST/</strong></a></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200601203041314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="2">2. 插件安装</h5>
+<p>接下来安装 percona zabbix 插件，这个插件是用来监控 MySQL 的。由于我的MySQL安装在了 Zabbix Server(10.0.0.2)，所以这里就把插件安装在 Zabbix Server 上。需要注意的是插件是与 Zabbix Agent 结合使用的，所以这台 Zabbix Server 也要安装 Zabbix Agent，当然在这之前我们已经在 Zabbix Server 上安装过 Zabbix Agent。</p>
+<pre><code class="python"># 下载插件rpm包
+[root@Zabbix-server ~]$ wget https://www.percona.com/downloads/percona-monitoring-plugins/percona-monitoring-plugins-1.1.8/binary/redhat/7/x86_64/percona-zabbix-templates-1.1.8-1.noarch.rpm
+
+# 安装插件
+[root@Zabbix-server ~]$ rpm -ivh percona-zabbix-templates-1.1.8-1.noarch.rpm 
+警告：percona-zabbix-templates-1.1.8-1.noarch.rpm: 头V4 DSA/SHA1 Signature, 密钥 ID cd2efd2a: NOKEY
+准备中...                          ############################ [100%]
+正在升级/安装...
+   1:percona-zabbix-templates-1.1.8-1 ############################ [100%]
+
+Scripts are installed to /var/lib/zabbix/percona/scripts
+Templates are installed to /var/lib/zabbix/percona/templates
+
+# 跳转到模板目录下，需要将配置项文件复制到/etc/zabbix/zabbix_agentd.d/目录下
+[root@agent zabbix_agentd.d]$ cd /var/lib/zabbix/percona/templates/
+[root@agent templates]$ ls
+userparameter_percona_mysql.conf  zabbix_agent_template_percona_mysql_server_ht_2.0.9-sver1.1.8.xml
+[root@agent templates]$ cp userparameter_percona_mysql.conf /etc/zabbix/zabbix_agentd.d/
+</code></pre>
+
+<hr>
+
+<h5 id="3">3. 导入模板</h5>
+<p>将 <kbd>/var/lib/zabbix/percona/templates/</kbd> 下的模板文件 <font>zabbix_agent_template_percona_mysql_server_ht_2.0.9-sver1.1.8.xml</font> 拷贝出来，通过导入的方式添加这个模板。但是由于 /var/lib/zabbix/percona/templates/ 下的模板版本比较低，所以不能成功导入。所以这里需要下载新的模板，模板下载地址：<a href="https://yqall01.baidupcs.com/file/1d8671ec0c4ed833a46777d39eb58f17?bkt=en-40ebf341379bd9a09cbd46121497f4543ebb3655473caf8d6ef9b9418218d0140dd6568892d4d5d141c3b6ed568d139771bb1a12fb943b3047a173694e3df01d&amp;fid=3598778341-250528-810203754126101&amp;time=1591014563&amp;sign=FDTAXUGERLQlBHSKfW-DCb740ccc5511e5e8fedcff06b081203-bVMhNz%2BfgBPvb%2BLL5iNu3zHYr1o%3D&amp;to=74&amp;size=517237&amp;sta_dx=517237&amp;sta_cs=3074&amp;sta_ft=xml&amp;sta_ct=7&amp;sta_mt=7&amp;fm2=MH%2CYangquan%2CAnywhere%2C%2Cshanghai%2Cct&amp;ctime=1478267803&amp;mtime=1506479460&amp;resv0=-1&amp;resv1=0&amp;resv2=rlim&amp;resv3=5&amp;resv4=517237&amp;vuk=1341537225&amp;iv=0&amp;htype=&amp;randtype=&amp;newver=1&amp;newfm=1&amp;secfm=1&amp;flow_ver=3&amp;pkey=en-4e460e445728adc605cb4aeb60cb37e30569194bf146d015ee12f5075bc56d04c1fbba276a910daeea857fe95a2d10ba156e71c40ad5c4fc305a5e1275657320&amp;sl=68616270&amp;expires=8h&amp;rt=sh&amp;r=895000670&amp;vbdid=1608359299&amp;fin=zbx_percona_mysql_template.xml&amp;fn=zbx_percona_mysql_template.xml&amp;rtype=1&amp;dp-logid=3545109637442360956&amp;dp-callid=0.1&amp;hps=1&amp;tsl=200&amp;csl=200&amp;fsl=-1&amp;csign=D7MLdW2zR6RW6apozIPybJJqtDo%3D&amp;so=0&amp;ut=6&amp;uter=4&amp;serv=0&amp;uc=3176236016&amp;ti=8f692c02a37bcacc8a21722b98f4cd7d472fde114e9cbace&amp;hflag=30&amp;adg=c_e11812cf66835421ee7602a531b9185a&amp;reqlabel=250528_f_7861bc33c58f0c7e60b5eed42fb788ec_-1_23c7c237e57ac19643ed7bc52f3ea722&amp;by=themis"><strong>zbx_percona_mysql_template.xml</strong></a>。<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020060120323217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200601203345930.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="4">4. 模板不兼容的处理</h5>
+<p>处理方式1：安装一个低版本的 Zabbix 2.2，然后再导入这个模板</p>
+<p>处理方式2：升级 Zabbix 2.2 到 4.0，然后导出模板
+<hr></p>
+<h5 id="5">5. 测试取监控项的值</h5>
+<p>模板导入之后，要重启Zabbix Agent使模板生效。然后开始测试取MySQL监控的项的值。</p>
+<pre><code class="python"># 模板导入之后，要重启Zabbix Agent使模板生效
+[root@Zabbix-server ~]$ systemctl  restart zabbix-agent
+# 查看监控项
+[root@Zabbix-server zabbix_agentd.d]$ cat userparameter_percona_mysql.conf 
+UserParameter=MySQL.Sort-scan,/var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh kt
+UserParameter=MySQL.slave-stopped,/var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh jh
+UserParameter=MySQL.Com-replace,/var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh jz
+...
+UserParameter=MySQL.running-slave,/var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh running-slave
+[root@Zabbix-server zabbix_agentd.d]$ sh -x /var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh op
+...
+# 使用调试模式执行取值的命令
+[root@Zabbix-server zabbix_agentd.d]$ sh -x /var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh ij
++ ITEM=
++ HOST=localhost
+++ dirname /var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh
++ DIR=/var/lib/zabbix/percona/scripts
++ CMD='/usr/bin/php -q /var/lib/zabbix/percona/scripts/ss_get_mysql_stats.php --host localhost --items gg'
++ CACHEFILE=/tmp/localhost-mysql_cacti_stats.txt
+...
+# 执行这个php脚本取值
+[root@Zabbix-server zabbix_agentd.d]$ /usr/bin/php -q /var/lib/zabbix/percona/scripts/ss_get_mysql_stats.php --host localhost --items gg
+gg:0[root@Zabbix-server zabbix_agentd.d]$
+
+# 如果报MySQL拒绝用户的错误，就需要修改连接MySQL的用户名密码等（如果是二进制安装的，一定要协商MySQL的socket路径）
+[root@Zabbix-server zabbix_agentd.d]$ vim /var/lib/zabbix/percona/scripts/ss_get_mysql_stats.php
+$mysql_user = 'zabbix';
+$mysql_pass = '';
+$mysql_port = 3306;
+$mysql_socket = NULL;
+
+# 这时候就可以取值了
+[root@Zabbix-server zabbix_agentd.d]$ sh /var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh ih
+319916
+[root@Zabbix-server zabbix_agentd.d]$ /usr/bin/php -q /var/lib/zabbix/percona/scripts/ss_get_mysql_stats.php --host localhost --items oj
+oj:6[root@Zabbix-server zabbix_agentd.d]$ /usr/bin/php -q /var/lib/zabbix/percona/scripts/ss_get_mysql_stats.php --host localhost --items ih
+ih:310965[root@Zabbix-server zabbix_agentd.d]$ 
+</code></pre>
+
+<p>监控数据库不是每个监控项都要取一次值，而是监控一次生成缓存(文件)，<font>5分钟之后把这个缓存文件删除</font> 再监控下一次。每一次 <font>监控的间隔默认是300s</font>，可以通过修改 <kbd>/var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh</kbd> 脚本来修改这个值。</p>
+<pre><code class="python"># 修改脚本，将取值的默认间隔设置为30s
+[root@Zabbix-server zabbix_agentd.d]$ vim /var/lib/zabbix/percona/scripts/get_mysql_stats_wrapper.sh
+
+# 缓存文件
+[root@Zabbix-server zabbix_agentd.d]$ ll /tmp/localhost-mysql_cacti_stats.txt 
+-rw-r--r-- 1 root root 1393 6月   1 11:48 /tmp/localhost-mysql_cacti_stats.txt
+</code></pre>
+
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020060123451266.png" /></p>
+<pre><code class="python"># 上面手动执行脚本取值生成的缓存文件的用户和用户组都是root，很容易出问题，提示权限拒绝，所以要删除。
+[root@Zabbix-server zabbix_agentd.d]$ rm -r /tmp/localhost-mysql_cacti_stats.txt 
+
+# 使用zabbix_get来取值，这里要把key复制粘贴下来，不要使用gg什么的
+[root@Zabbix-server zabbix_agentd.d]$ zabbix_get -s 127.0.0.1 -k MySQL.Open-files
+5
+# 这时候临时的缓存文件属于zabbix用户和zabbix用户组
+[root@Zabbix-server zabbix_agentd.d]$  ll /tmp/localhost-mysql_cacti_stats.txt 
+-rw-rw-r-- 1 zabbix zabbix 1398 6月   1 11:56 /tmp/localhost-mysql_cacti_stats.txt
+</code></pre>
+
+<blockquote>
+<p><font>zabbix在执行脚本的时候使用的用户是zabbix</font></p>
+</blockquote>
+<hr>
+
+<h5 id="6">6. 主机链接新模板</h5>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200601235814126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200601235852242.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>设置每页显示200行，默认是50行：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020060200001163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>设置间隔，与服务器中的设置一致是30s：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602000344599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>查看最新数据：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602000456421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="7">7. 主从状态监控项</h5>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200602001017610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>对于主库是没有MySQL同步进程的，所以主从状态监控项是取不到的，所以 <font>需要禁用这个监控项</font>。如果是从库，报帐号密码错误，可能是脚本的原因，<kbd>get_mysql_stats_wrapper.sh</kbd>：</p>
+<pre><code class="python">ITEM=$1
+HOST=localhost
+DIR=`dirname $0`
+CMD=&quot;/usr/bin/php -q $DIR/ss_get_mysql_stats.php --host $HOST --items gg&quot;
+CACHEFILE=&quot;/tmp/$HOST-mysql_cacti_stats.txt&quot;
+
+if [ &quot;$ITEM&quot; = &quot;running-slave&quot; ]; then
+    # Check for running slave
+    RES=`HOME=~zabbix mysql -e 'SHOW SLAVE STATUS\G' | egrep '(Slave_IO_Running|Slave_SQL_Running):' | awk -F: '{print $2}' | tr '\n' ','`
+    if [ &quot;$RES&quot; = &quot; Yes, Yes,&quot; ]; then
+        echo 1
+    else
+        echo 0
+    fi
+    exit
+elif [ -e $CACHEFILE ]; then
+    # Check and run the script
+    TIMEFLM=`stat -c %Y /tmp/$HOST-mysql_cacti_stats.txt`
+    TIMENOW=`date +%s`
+    if [ `expr $TIMENOW - $TIMEFLM` -gt 30 ]; then
+        rm -f $CACHEFILE
+        $CMD 2&gt;&amp;1 &gt; /dev/null
+    fi
+else
+    $CMD 2&gt;&amp;1 &gt; /dev/null
+fi
+
+# Parse cache file
+if [ -e $CACHEFILE ]; then
+    cat $CACHEFILE | sed 's/ /\n/g; s/-1/0/g'| grep $ITEM | awk -F: '{print $2}'
+else
+    echo &quot;ERROR: run the command manually to investigate the problem: $CMD&quot;
+fi
+</code></pre>
+
+<p>那就可以试试不要使用 zabbix 用户取值，使用其它用户，如 root 用户。所以，需要修改：</p>
+<pre><code class="python">RES=`HOME=~zabbix mysql -uroot -p123456 -e 'SHOW SLAVE STATUS\G' | egrep '(Slave_IO_Running|Slave_SQL_Running):' | awk -F: '{print $2}' | tr '\n' ','`
+</code></pre>
+
+<pre><code class="python"># 这里在没有修改的情况下也是可以取到值的，不过这里是主库，取到的值是0
+[root@Zabbix-server zabbix_agentd.d]$ zabbix_get -s 127.0.0.1 -k MySQL.running-slave
+0
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

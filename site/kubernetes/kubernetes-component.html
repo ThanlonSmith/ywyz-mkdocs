@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="erics">
+        <link rel="canonical" href="https://ywyz.pythoneers.cn/kubernetes/kubernetes-component.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+<meta name="keywords"
+      content=""/>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/nav.css" rel="stylesheet">
+        <link href="../css/public.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-36723568-3', 'mkdocs.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">运维云栈</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux/linux-basis.html">Linux基础</a>
+</li>
+                                    
+<li >
+    <a href="../linux/linux-advance.html">Linux进阶</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shell <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../shell/shell-basis.html">Shell基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CentOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../centos/software-install.html">CentOS软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ubuntu <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ubuntu/software-install.html">Ubuntu软件安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zabbix <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../zabbix/install.html">Zabbix安装</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-host.html">Zabbix添加监控主机</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/trigger.html">Zabbix添加触发器</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-alarm.html">Zabbix自定义报警</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-graphics.html">Zabbix使用grafana自定义图形</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/custom-template.html">Zabbix自定义模板</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/monitor-mysql.html">Zabbix使用percona监控MySQL</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/automatic-monitor.html">Zabbix自动化监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/agent-active-mode.html">Zabbix Agent主动模式</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/version-upgrade.html">Zabbix版本升级</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/performance-tuning.html">Zabbix性能调优</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/distributed-monitor.html">Zabbix分布式监控</a>
+</li>
+                                    
+<li >
+    <a href="../zabbix/question.html">Zabbix遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kubernetes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="kubernetes-component.html">K8S架构/组件说明</a>
+</li>
+                                    
+<li >
+    <a href="kubernetes-install.html">K8S集群安装部署</a>
+</li>
+                                    
+<li >
+    <a href="kubernetes-network.html">K8S网络通信</a>
+</li>
+                                    
+<li >
+    <a href="kubernetes-resource.html">K8S资源清单</a>
+</li>
+                                    
+<li >
+    <a href="kubernetes-question.html">K8S中遇到的问题</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nginx <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../nginx/nginx-knowledge.html">Nginx知识点</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a rel="next" href="../zabbix/question.html">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="kubernetes-install.html">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#k8s">K8S架构/组件说明</a></li>
+            <li><a href="#1-borg">1. Borg的架构</a></li>
+            <li><a href="#2-kubernetes">2. Kubernetes的架构</a></li>
+            <li><a href="#3-etcd">3. ETCD组件</a></li>
+            <li><a href="#4">4. 组件综述</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="" src="../imgs/k8s/202011071500.jpeg" /></p>
+<h4 id="k8s">K8S架构/组件说明</h4>
+<hr>
+
+<h5 id="1-borg">1. Borg的架构</h5>
+<p>Kubernetes 是 Borg 的 Go 语言的编译版本，在认识 Kubernetes 采用的架构之前不妨先了解 Borg 的架构：BorgMaster 负责请求分发，工作节点是 Borglet。为了防止BorgMaster发生单点故障、保证高可用集群，<font>高可用节点最好保证三个以上的奇数个</font>。scheduler 是调度器组件，用来确定请求交给谁处理。scheduler 不会直接和 Borglet 交互，而是把数据写入到 Paxos 数据库 ( Google )，Borglet 会监听数据库，如果有自己的请求会处理自己的请求。
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200607210750432.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" />
+<hr></p>
+<h5 id="2-kubernetes">2. Kubernetes的架构</h5>
+<p>Kubernetes相较于Borg在某些地方是有不同的。请求的任务到来之后 scheduler 把请求的任务交给 api server，api server 负责把请求写入到 etcd，scheduler 并不会和 etcd 直接交互。</p>
+<blockquote>
+<p><font>etcd的官方将它定义一个可信赖（为了etcd持久化不造成单点故障，所以让它本身支持集群化，不需要使用其它的中间件）的分布式键值存储服务，它能够为整个分布式集群存储一些关键数据，协助分布式集群的正常运转(保存整个分布式集群的需要持久化的配置文件)。</font></p>
+</blockquote>
+<p>rc，用来维护副本的数目或期望值，如果不满足期望值，负责把副本数改写为期望值。api server是主服务的核心，是一切服务的访问入口，scheduler、rc、kubectl、web UI、etcd都需要和api server交互。为了减轻api server的压力，每个组件还可以在本地生成缓存。
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200607212259336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>Kubernetes 会使用 ETCD 做持久化方案，ETCD 存储有两个版本，v2 和 v3 版，<font>v2 版本会把所有数据写入到内存中，v3 版本会引入本地的持久化操作。服务器关机后，数据可以从磁盘恢复。</font> 理论上会选择v3版本，因为不会造成数据丢失。Kubernetes 1.11 版本以及之前的版本不支持 v3 版的功能。 
+<hr></p>
+<h5 id="3-etcd">3. ETCD组件</h5>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200607215751122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoYW5sb24=,size_16,color_FFFFFF,t_70" /></p>
+<p>ETCD采用HTTP协议进行CS的构建服务，<font>Kubernetes 也采用采用 HTTP 协议进行 CS 的构建服务</font>。所有的信息都存放在 Raft 中，为了防止信息损坏，还设置了 wal 预写日志。如果你想对数据进行更新，首先生成日志存储起来，日志还会被定时完整地备份。完整备份是因为增量的备份比较多，还原比较费时。日志和数据还会被实时写入到本地磁盘中，进行持久化实施。
+<hr></p>
+<h5 id="4">4. 组件综述</h5>
+<p><kbd>API SERVER</kbd>：所有服务访问统一入口</p>
+<p><kbd>CrontrollerManager</kbd>：维持副本期望数目</p>
+<p><kbd>Scheduler</kbd>：负责接受任务，选择合适的节点(节点的某些特性分配给Pod)进行分配任务</p>
+<p><kbd>ETCD</kbd>：键值对数据库，储存K8S集群所有重要信息（持久化）</p>
+<p><kbd>kubelet</kbd>：直接跟容器引擎(Docker)交互，实现容器的生命周期管理</p>
+<p><kbd>kube-proxy</kbd>：实现Pob与Pod之间的访问和负载均衡。默认是操作防火墙，负责写入规则至 IPTABLES 实现服务映射，新版中还支持 IPVS</p>
+<p><kbd>COREDNS</kbd>：可以为集群中的SVC创建一个域名 IP 的对应关系解析（重要组件，实现负载均衡其中的功能）</p>
+<p><kbd>DASHBOARD</kbd>：给 K8S 集群提供一个 B/S 结构访问体系</p>
+<p><kbd>INGRESS CONTROLLER</kbd>：官方只能实现四层代理，INGRESS 可以实现七层代理（可以根据域名负载均衡）</font></p>
+<p><kbd>FEDERATION</kbd>：提供一个可以跨集群中心多K8S统一管理的功能</p>
+<p><kbd>PROMETHEUS</kbd>：提供K8S集群的监控能力</p>
+<p><kbd>ELK</kbd>：提供 K8S 集群日志统一分析接入平台</p></div>
+        </div>
+
+        <footer class="col-md-12">
+<div class="container-fluid" style="background:#2C2C2C;color: #c1c1c1;font-weight: bold;margin-bottom: 2px">
+    <div class="row">
+        <div class="col-md-12  text-center" style="padding: 40px">
+            <a href="https://www.nginx.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Nginx</a>&nbsp;|
+            <a href="https://zabbix.org/" style="color:#c1c1c1;font-weight: bold"
+               target="_blank">Zabbix</a>&nbsp;|
+            <a href="https://kubernetes.io/" style="color:#c1c1c1;font-weight: bold" target="_blank">Kubernetes</a>&nbsp;|
+            <a href="https://www.centos.org/" style="color:#c1c1c1;font-weight: bold" target="_blank">CentOS</a>&nbsp;|
+            <a href="https://ubuntu.com/" style="color:#c1c1c1;font-weight: bold" target="_blank">Ubuntu</a>&nbsp;
+            <br>
+            Copyright © 2020-2021&nbsp; pythoneers.cn. All Rights Reserved.&nbsp;运维云栈 版权所有&nbsp;
+            <br>
+            <a target="_blank_" href="http://www.miit.gov.cn/" style="color:#c1c1c1;">豫ICP备19037971-2号</a>
+            <!--            <a target="_blank">-->
+            <!--                <img src="/static/home/images/beian.png" style="padding-bottom:6px">-->
+            <!--                <span style="color:#c1c1c1;">豫公网安备 41152802000091号</span>-->
+            <!--            </a>-->
+            <span id="cnzz_stat_icon_1279280889">
+            <a href="https://www.cnzz.com/stat/website.php?web_id=1279280889" target="_blank" title="站长统计">
+              <img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+            </a>
+          </span>
+        </div>
+    </div>
+</div>
+
+        </footer>
+
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/gotop.js" defer></script>
+<!--    <script async src="../js/somelib.js"></script>-->
+<script data-ad-client="ca-pub-6937898095875663"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //baidu自动收录
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    //360自动收录
+    (function () {
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
